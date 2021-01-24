@@ -1,0 +1,50 @@
+//menu bar desktop
+@media(min-width:1280px){
+    .header{
+        height: 90px;
+        padding:0 156px 0 156px;
+        background: #fff;
+        color: black;
+        position: sticky;
+        top: 0;
+    }
+    .up-line{
+        margin: 0 -156px;
+    }
+    .hamburguesa, .menu-check:checked{
+        display: none;
+    }
+    .logo{
+        height: 60px;
+        width: 68px;
+    }
+    .menu{
+        display: inline-flex;
+        position: relative;
+        top: -5px;
+        left: 225px;
+        background:transparent;
+    }
+    .menu div{
+        padding: 0;
+        
+    }
+    .menu div a{
+        display: inline-block;
+        color: #000;
+        text-decoration: none;
+        padding: 50px 50px;
+    }
+    .button{
+        width: 54px;
+        height: 54px;
+        border-radius: 27px;
+        display: inline;
+        border: 2px solid $main-color;
+        color: $main-color;
+        & a{
+            padding: 1px 25px 34px;
+        }
+    }
+    
+}
