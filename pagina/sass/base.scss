@@ -29,7 +29,7 @@
     opacity: 0;
     position: absolute;
     left: 0;
-    top: 0;
+    top: -30px;
 }
 .menu-check:checked ~ label .hamburguesa{
     display: none;
@@ -62,13 +62,11 @@
     border-bottom: oldlace 1px solid;
 }
 .menu div a:hover{
-    text-decoration: line-through;
-    color: #00F3BB;
+    text-decoration: underline rgb(184, 184, 184);
     transition: .2s ease-in-out;
 }
 .menu div a:active{
-    text-decoration: line-through;
-    color: rgba(6,10,36,0.56);
+    text-decoration: underline gray;
     transition: .2s ease-in-out;
 }
 .button{

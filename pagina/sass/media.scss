@@ -19,32 +19,46 @@
         width: 68px;
     }
     .menu{
-        display: inline-flex;
-        position: relative;
+        display: flex;
+        left: auto;
         top: -5px;
-        left: 225px;
-        background:transparent;
+        width: 500px;
+        height: 90px;
+        background:none;
     }
-    .menu div{
-        padding: 0;
-        
+    .menu div a:hover{
+        text-decoration: underline;
+        color:  $main-color;
+        transition: .2s ease-in-out;
     }
+    .menu div a:active{
+        text-decoration: underline #9400f7;
+        color: $main-color;
+        transition: .2s ease-in-out;
+    }
+
     .menu div a{
-        display: inline-block;
-        color: #000;
+        display: flex;
+        color: $main-color;
         text-decoration: none;
-        padding: 50px 50px;
+        padding: 25px 25px;
+        border-bottom: none;
     }
     .button{
+        display: flex;
+        align-items: center;
         width: 54px;
         height: 54px;
         border-radius: 27px;
-        display: inline;
         border: 2px solid $main-color;
         color: $main-color;
         & a{
-            padding: 1px 25px 34px;
+            padding: 17px 40px 40px;
+            margin-left: -30px;
         }
     }
-    
+    .cross{
+        padding-left: 17px;
+    }
 }
+//modo oscuro
