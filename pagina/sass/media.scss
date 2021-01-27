@@ -26,17 +26,16 @@
         height: 90px;
         background:none;
     }
-    .menu div a:hover{
-        text-decoration: underline;
-        color:  $main-color;
-        transition: .2s ease-in-out;
-    }
-    .menu div a:active{
-        text-decoration: underline #9400f7;
-        color: $main-color;
-        transition: .2s ease-in-out;
-    }
-
+    // .menu div a:hover{
+    //     text-decoration: underline;
+    //     color:  $main-color;
+    //     transition: .2s ease-in-out;
+    // }
+    // .menu div a:active{
+    //     text-decoration: underline #9400f7;
+    //     color: $main-color;
+    //     transition: .2s ease-in-out;
+    // }
     .menu div a{
         display: flex;
         color: $main-color;
@@ -62,3 +61,18 @@
     }
 }
 //modo oscuro
+@media(min-width: 1280px){
+    .oscuro{
+        .button{
+            border: 2px solid #fff;
+            color: #fff;
+        }
+        .menu{
+            background: none;
+        }
+        .menu div a{
+            color: #fff;
+        }
+    }
+}
+

@@ -61,18 +61,32 @@
     text-decoration: none;
     border-bottom: oldlace 1px solid;
 }
-.menu div a:hover{
-    text-decoration: underline rgb(184, 184, 184);
-    transition: .2s ease-in-out;
-}
-.menu div a:active{
-    text-decoration: underline gray;
-    transition: .2s ease-in-out;
-}
+// .menu div a:hover{
+//     text-decoration: underline rgb(184, 184, 184);
+//     transition: .2s ease-in-out;
+// }
+// .menu div a:active{
+//     text-decoration: underline gray;
+//     transition: .2s ease-in-out;
+// }
 .button{
    display: none;
 }
-
+//modo oscuro
+.oscuro{
+    .header{
+        background: $dark-mode-color;
+    }
+    .up-line{
+        background-color: $typo-bg-color;
+    }
+    .menu{
+        background: $typo-bg-color;
+    }
+    .fa-times, .fa-bars{
+        color: #fff;
+    }
+}
 //sections
 //container
 //boxes
