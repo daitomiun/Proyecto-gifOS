@@ -53,7 +53,7 @@
         color: $main-color;
         & a{
             padding: 17px 40px 40px;
-            margin-left: -30px;
+            margin-right: 30px;
         }
     }
     .cross{
@@ -72,6 +72,9 @@
         }
         .menu div a{
             color: #fff;
+        }
+        menu div::after{
+            content: "modo diurno";
         }
     }
 }

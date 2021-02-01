@@ -12,3 +12,15 @@ $font-roboto: 'roboto', sans-serif;
 $font-monserat: 'Montserrat', sans-serif;
 
 //object size
+
+//mixin
+@mixin bg-base {
+    display: block;
+    //position: absolute;
+    height: 50%;
+    width: 100%;
+    content: '';
+    top: 0;
+    left: 0;
+    z-index: 0;
+}

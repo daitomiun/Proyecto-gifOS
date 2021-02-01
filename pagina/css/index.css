@@ -15,7 +15,7 @@
   color: black;
   position: sticky;
   top: 0;
-  margin-bottom: 29px;
+  z-index: 1;
 }
 
 .up-line {
@@ -57,6 +57,7 @@
   position: absolute;
   top: 95px;
   left: 0;
+  opacity: 0.95;
   background: #572EE5;
   font-family: "Montserrat", sans-serif;
   width: 100%;
@@ -74,6 +75,10 @@
   border-bottom: oldlace 1px solid;
 }
 
+.fa-times, .fa-bars {
+  color: #572EE5;
+}
+
 .button {
   display: none;
 }
@@ -89,6 +94,47 @@
 }
 .oscuro .fa-times, .oscuro .fa-bars {
   color: #fff;
+}
+.oscuro .search-sect, .oscuro .trending-sect, .oscuro footer {
+  color: #fff;
+}
+.oscuro .search-sect.bg-w-g, .oscuro .trending-sect.bg-w-g, .oscuro footer.bg-w-g {
+  background-color: #37383C;
+}
+.oscuro .search-sect.bg-w-b, .oscuro .trending-sect.bg-w-b, .oscuro footer.bg-w-b {
+  background-color: #000;
+}
+
+.search-sect, .trending-sect, .footer {
+  font-family: "Montserrat", sans-serif;
+  color: #572EE5;
+  height: 50%;
+}
+.search-sect.bg-w-g, .trending-sect.bg-w-g, .footer.bg-w-g {
+  display: block;
+  height: 50%;
+  width: 100%;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: #ffffff;
+}
+.search-sect.bg-w-b, .trending-sect.bg-w-b, .footer.bg-w-b {
+  display: block;
+  height: 50%;
+  width: 100%;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: #F3F5F8;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (min-width: 1280px) {
@@ -142,7 +188,7 @@
   }
   .button a {
     padding: 17px 40px 40px;
-    margin-left: -30px;
+    margin-right: 30px;
   }
 
   .cross {
@@ -159,6 +205,9 @@
   }
   .oscuro .menu div a {
     color: #fff;
+  }
+  .oscuro menu div::after {
+    content: "modo diurno";
   }
 }
 

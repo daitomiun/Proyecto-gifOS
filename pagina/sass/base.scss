@@ -10,7 +10,7 @@
     color: black;
     position: sticky;
     top: 0;
-    margin-bottom: 29px;
+    z-index: 1;
 }
 .up-line{
     position: absolute;
@@ -46,6 +46,7 @@
     position: absolute;
     top: 95px;
     left: 0;
+    opacity: 0.95;
     background: $main-color;
     font-family: $font-monserat;
     width: 100%;
@@ -61,6 +62,9 @@
     text-decoration: none;
     border-bottom: oldlace 1px solid;
 }
+.fa-times, .fa-bars{
+    color: $main-color;
+}
 // .menu div a:hover{
 //     text-decoration: underline rgb(184, 184, 184);
 //     transition: .2s ease-in-out;
@@ -72,7 +76,9 @@
 .button{
    display: none;
 }
+
 //modo oscuro
+
 .oscuro{
     .header{
         background: $dark-mode-color;
@@ -86,7 +92,42 @@
     .fa-times, .fa-bars{
         color: #fff;
     }
+    .search-sect, .trending-sect, footer{
+        color: #fff;
+        &.bg-w-g{
+            background-color: $dark-mode-color;
+        }
+        &.bg-w-b{
+            background-color: $typo-bg-color;
+        }
+    }
+  
 }
+
 //sections
+
+.search-sect, .trending-sect, .footer{ 
+    font-family: $font-monserat;
+    color: $main-color;
+    height: 50%;
+    //background
+    &.bg-w-g{
+        @include bg-base;
+        background-color: #ffffff;
+    }
+    &.bg-w-b{
+        @include bg-base;
+        background-color: $light-mode-color;
+    }
+}
+
 //container
-//boxes
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //boxes
+}
+
+//fonts
+
