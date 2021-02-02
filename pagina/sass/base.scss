@@ -65,16 +65,69 @@
 .fa-times, .fa-bars{
     color: $main-color;
 }
-// .menu div a:hover{
-//     text-decoration: underline rgb(184, 184, 184);
-//     transition: .2s ease-in-out;
-// }
-// .menu div a:active{
-//     text-decoration: underline gray;
-//     transition: .2s ease-in-out;
-// }
 .button{
    display: none;
+}
+
+//sections
+
+.search-sect, .trending-sect, .footer{ 
+    font-family: $font-monserat;
+    color: $main-color;
+    height: 50%;
+    //background
+    &.bg-w-g{
+        @include bg-base;
+        background-color: #ffffff;
+    }
+    &.bg-w-b{
+        @include bg-base;
+        background-color: $light-mode-color;
+    }
+}
+
+//container
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title-align{
+        text-align: center;
+    }
+    //boxes
+    .box{
+        width: 100%;
+        padding: 0 30px;
+        &.search-box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .img-bar{
+            margin-top: 30px;
+            width: 273px;
+            height: 130px;
+        }
+        .search-bar{
+           margin-top: 31px;
+           border-radius: 27px;
+           border: 1px solid $main-color;
+           width: 100%;
+           height: 50px;
+           min-width: 290px;
+           max-width: 550px;
+        }
+        &.trend-recommend{
+            margin-top: 44px;
+
+            p{
+                margin-top: 5px;
+                margin-bottom: 44px;
+                font-size: 14px;
+            }
+        }
+    }
 }
 
 //modo oscuro
@@ -101,33 +154,11 @@
             background-color: $typo-bg-color;
         }
     }
-  
-}
-
-//sections
-
-.search-sect, .trending-sect, .footer{ 
-    font-family: $font-monserat;
-    color: $main-color;
-    height: 50%;
-    //background
-    &.bg-w-g{
-        @include bg-base;
-        background-color: #ffffff;
-    }
-    &.bg-w-b{
-        @include bg-base;
-        background-color: $light-mode-color;
+    .box{
+        .search-bar{
+            border: 1px solid #fff;
+        }
     }
 }
-
-//container
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    //boxes
-}
-
 //fonts
 
