@@ -108,6 +108,17 @@
   z-index: 0;
   background-color: #F3F5F8;
 }
+.search-sect.bg-w-b .black-typo, .trending-sect.bg-w-b .black-typo, .footer.bg-w-b .black-typo {
+  color: #000;
+  font-size: 14px;
+}
+
+.footer {
+  color: #000;
+}
+.footer .container .box .black-typo {
+  color: black;
+}
 
 .container {
   display: flex;
@@ -132,7 +143,7 @@
   height: 130px;
 }
 .container .box .search-bar {
-  margin-top: 31px;
+  margin-top: 29px;
   border-radius: 27px;
   border: 1px solid #572EE5;
   width: 100%;
@@ -148,7 +159,37 @@
   margin-bottom: 44px;
   font-size: 14px;
 }
+.container .box.trending-gifos {
+  margin-top: 51px;
+  font-size: 20px;
+}
+.container .box.trending-gifos p {
+  margin-top: 10px;
+  margin-bottom: 32px;
+}
+.container .box.gifs {
+  width: 100%;
+  height: 187px;
+  margin-bottom: 82px;
+}
+.container .box.icon-sect {
+  margin-top: 47px;
+  margin-bottom: 46px;
+}
+.container .box.icon-sect .icons a {
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  color: grey;
+  margin: 22px 9px;
+}
+.container .box.rights {
+  margin-bottom: 26px;
+}
 
+.oscuro .footer .container .box .black-typo {
+  color: #fff;
+}
 .oscuro .header {
   background: #37383C;
 }
@@ -168,10 +209,16 @@
   background-color: #37383C;
 }
 .oscuro .search-sect.bg-w-b, .oscuro .trending-sect.bg-w-b, .oscuro footer.bg-w-b {
-  background-color: #000;
+  background-color: #222326;
+}
+.oscuro .search-sect.bg-w-b .black-typo, .oscuro .trending-sect.bg-w-b .black-typo, .oscuro footer.bg-w-b .black-typo {
+  color: #fff;
 }
 .oscuro .box .search-bar {
   border: 1px solid #fff;
+}
+.oscuro .box.icon-sect .icons a {
+  color: #fff;
 }
 
 @media (min-width: 1280px) {
@@ -230,6 +277,36 @@
 
   .cross {
     padding-left: 17px;
+  }
+}
+@media (min-width: 1000px) {
+  .search-sect .container .box {
+    font-size: 25px;
+  }
+
+  .container .box .img-bar {
+    width: 390px;
+    height: 160px;
+  }
+}
+@media (min-width: 1280px) {
+  .search-sect .container .box {
+    font-size: 30px;
+  }
+  .search-sect .container .box.title-align, .search-sect .container .box.trend-recommend {
+    margin-top: 76px;
+  }
+  .search-sect .container .box.search-box:last-child {
+    margin-bottom: 95px;
+  }
+
+  .repair-br {
+    display: none;
+  }
+
+  .container .box .img-bar {
+    width: 390px;
+    height: 190px;
   }
 }
 @media (min-width: 1280px) {

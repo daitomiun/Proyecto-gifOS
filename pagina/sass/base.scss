@@ -83,8 +83,26 @@
     &.bg-w-b{
         @include bg-base;
         background-color: $light-mode-color;
+        .black-typo{
+            color: $typo-bg-color;
+            font-size: $font-small;
+        }
     }
 }
+//esto no queda absoluto
+.footer{
+    color: $typo-bg-color;
+    .container{
+        .box{
+            
+            .black-typo{
+                color: black;
+            }
+        }
+    }
+}
+//esto no queda absoluto
+
 
 //container
 .container{
@@ -110,7 +128,7 @@
             height: 130px;
         }
         .search-bar{
-           margin-top: 31px;
+           margin-top: 29px;
            border-radius: 27px;
            border: 1px solid $main-color;
            width: 100%;
@@ -127,12 +145,52 @@
                 font-size: 14px;
             }
         }
+        &.trending-gifos{
+            margin-top: 51px;
+            font-size: $font-large;
+            p{
+                margin-top: 10px;
+                margin-bottom: 32px;
+            }
+        }
+        &.gifs{
+            width: 100%;
+            height: 187px;
+            margin-bottom: 82px;
+        }
+        &.icon-sect{
+            margin-top: 47px;
+            margin-bottom: 46px;
+            .icons{
+                a{
+                    width: 20px;
+                    height: 20px;
+                    text-decoration: none;
+                    color: grey;
+                    margin: 22px 9px;
+                }
+            } 
+        }
+        &.rights{
+            margin-bottom: 26px;
+        }
     }
 }
 
 //modo oscuro
 
 .oscuro{
+    //esto no queda absoluto
+    .footer{
+        .container{
+            .box{
+                .black-typo{
+                    color: #fff;
+                }
+            }
+        }
+    }
+    //esto no queda absoluto
     .header{
         background: $dark-mode-color;
     }
@@ -151,14 +209,26 @@
             background-color: $dark-mode-color;
         }
         &.bg-w-b{
-            background-color: $typo-bg-color;
+            background-color: $dark-mode-color-secondary;
+            .black-typo{
+                color: #fff;
+            }
         }
     }
     .box{
         .search-bar{
             border: 1px solid #fff;
         }
+        &.icon-sect{
+            .icons{
+                a{
+                    color: #fff;
+                }
+            }
+        }
     }
 }
+
+
 //fonts
 

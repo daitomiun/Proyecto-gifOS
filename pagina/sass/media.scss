@@ -26,16 +26,6 @@
         height: 90px;
         background:none;
     }
-    // .menu div a:hover{
-    //     text-decoration: underline;
-    //     color:  $main-color;
-    //     transition: .2s ease-in-out;
-    // }
-    // .menu div a:active{
-    //     text-decoration: underline #9400f7;
-    //     color: $main-color;
-    //     transition: .2s ease-in-out;
-    // }
     .menu div a{
         display: flex;
         color: $main-color;
@@ -58,6 +48,54 @@
     }
     .cross{
         padding-left: 17px;
+    }
+}
+@media(min-width: 1000px){
+    .search-sect{
+        .container{
+            .box{
+                font-size: 25px;
+            }
+        }
+    }
+    .container{
+        .box{
+            .img-bar{
+                width: 390px;
+                height: 160px;
+            }
+        }
+    }
+}
+
+
+@media(min-width: 1280px){
+    //flex
+    .search-sect{
+        .container{
+            .box{
+                font-size: 30px;
+                &.title-align, &.trend-recommend{
+                    margin-top: 76px;
+                }
+                &.search-box:last-child{
+                    margin-bottom: 95px;
+                }
+            }
+        }
+    }
+    //br
+    .repair-br{
+        display: none;
+    }
+    //container
+    .container{
+        .box{
+            .img-bar{
+                width: 390px;
+                height: 190px;
+            }
+        }
     }
 }
 //modo oscuro
