@@ -84,6 +84,40 @@
             }
         }
     }
+
+    .footer{
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .box{
+                &.icon-sect{
+                    display: flex;
+                    width: 300px;
+                    margin: 20px 0 20px 160px;
+                    // margin-top: 46px;
+                    // margin-bottom: 46px;
+                    p{
+                        padding-top: 19px;
+                    }
+                    .icons{
+                        a{
+                            width: 20px;
+                            height: 20px;
+                            text-decoration: none;
+                            color: grey;
+                            margin: 22px 9px;
+                        }
+                    } 
+                }
+                &.rights{
+                    width: 300px;
+                    margin: 10px 160px 20px 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
     //br
     .repair-br{
         display: none;

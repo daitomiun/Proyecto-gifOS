@@ -300,6 +300,32 @@
     margin-bottom: 95px;
   }
 
+  .footer .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer .container .box.icon-sect {
+    display: flex;
+    width: 300px;
+    margin: 20px 0 20px 160px;
+  }
+  .footer .container .box.icon-sect p {
+    padding-top: 19px;
+  }
+  .footer .container .box.icon-sect .icons a {
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+    color: grey;
+    margin: 22px 9px;
+  }
+  .footer .container .box.rights {
+    width: 300px;
+    margin: 10px 160px 20px 0;
+    padding: 0;
+  }
+
   .repair-br {
     display: none;
   }

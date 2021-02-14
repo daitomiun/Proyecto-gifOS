@@ -55,7 +55,6 @@
 .menu div{
     text-align: center;
     padding: 17px 0 60px 0;
-
 }
 .menu div a{
     color: #fff;
@@ -212,6 +211,7 @@
             background-color: $dark-mode-color-secondary;
             .black-typo{
                 color: #fff;
+                
             }
         }
     }
@@ -220,6 +220,7 @@
             border: 1px solid #fff;
         }
         &.icon-sect{
+           
             .icons{
                 a{
                     color: #fff;
