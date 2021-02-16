@@ -84,6 +84,10 @@
   display: none;
 }
 
+#modo-d {
+  display: none;
+}
+
 .search-sect, .trending-sect, .footer {
   font-family: "Montserrat", sans-serif;
   color: #572EE5;
