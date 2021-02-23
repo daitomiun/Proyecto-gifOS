@@ -42,14 +42,29 @@
         border: 2px solid $main-color;
         color: $main-color;
         & a{
-            padding: 17px 40px 40px;
-            margin-right: 30px;
+            position: absolute;
+            padding: 11px 33px 48px 18px;
+            
         }
     }
     .cross{
-        padding-left: 17px;
+        padding: 19px 19px 17px 17px;
+        z-index: 100;
+    }
+    .button:hover{
+        background-color: $main-color;
+        .cross:hover{
+            color: #fff;
+        }
+    }
+    .button:active{
+        background-color: grey;
+        border: grey;
     }
 }
+
+
+
 @media(min-width: 1000px){
     .search-sect{
         .container{
@@ -84,7 +99,12 @@
             }
         }
     }
-
+    .title{
+        position: absolute;
+        transform: translate(20px, 22px);
+        font-size: 22px;
+        font-weight: 700;
+    }
     .footer{
         .container{
             display: flex;
@@ -147,6 +167,19 @@
         }
         menu div::after{
             content: "modo diurno";
+        }
+        .button:hover{
+            background-color: #fff;
+            .cross:hover{
+                color: $typo-bg-color;
+            }
+        }
+        .button:active{
+            background-color: grey;
+            border: grey;
+        }
+        .cross:active{
+            color: #fff !important; 
         }
     }
 }
