@@ -22,9 +22,13 @@
         display: flex;
         left: auto;
         top: -5px;
-        width: 500px;
+        width: 600px;
         height: 90px;
         background:none;
+        .home{
+            color: $main-color;
+            padding: 15px 20px 0 0;
+        }
     }
     .menu div a{
         display: flex;
@@ -38,6 +42,7 @@
         align-items: center;
         width: 54px;
         height: 54px;
+        margin-left: 170px;
         border-radius: 27px;
         border: 2px solid $main-color;
         color: $main-color;
@@ -159,6 +164,9 @@
         }
         .menu{
             background: none;
+            .home{
+                color: #fff;
+            }
         }
         .menu div a{
             color: #fff;

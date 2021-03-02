@@ -72,6 +72,11 @@
   width: 100%;
   height: 484px;
 }
+.menu .home {
+  color: #fff;
+  padding: 17px 0 17px 0;
+  font-size: 20px;
+}
 
 .menu div {
   text-align: center;
@@ -174,7 +179,7 @@
 .container .box .search-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-top: 29px;
   border-radius: 27px;
   border: 1px solid #572EE5;
@@ -183,9 +188,27 @@
   min-width: 290px;
   max-width: 550px;
 }
-.container .box .search-bar .s-text {
+.container .box .search-bar .search-button {
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  border: 0;
+  color: #572EE5;
+  background: transparent;
+  margin-right: 10px;
+}
+.container .box .search-bar .s-bar {
+  border: 0;
+  width: 100%;
+  max-width: 450px;
+  min-width: 250px;
+  font: "roboto", sans-serif;
+}
+.container .box .search-bar .s-bar.s-text {
+  position: absolute;
   color: grey;
-  padding-left: 30px;
+  background: transparent;
+  margin-left: -45px;
   font-size: 16px;
 }
 .container .box.trend-recommend {
@@ -205,7 +228,37 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.container .box.trend-recommend .written-recomend .gif-card {
+.container .box.trending-gifos {
+  margin-top: 51px;
+  font-size: 20px;
+}
+.container .box.trending-gifos p {
+  margin-top: 10px;
+  margin-bottom: 32px;
+}
+.container .box .community {
+  margin-top: 50px;
+  margin-bottom: 140px;
+  line-height: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.container .box .community.trends {
+  width: 360px;
+  height: 275px;
+  margin: 15px 15px;
+}
+.container .box .community.trends .adaptive-text {
+  padding-top: 150px;
+  padding-left: 20px;
+}
+.container .box .gif-card:hover {
+  opacity: 1;
+  transition: 0.9s ease-out;
+}
+.container .box .gif-card {
+  opacity: 0;
   width: 100%;
   height: 100%;
   max-width: 400px;
@@ -215,13 +268,13 @@
   background-color: rgba(87, 46, 229, 0.6);
   margin: 15px 15px;
 }
-.container .box.trend-recommend .written-recomend .gif-card .gif-icons {
+.container .box .gif-card .gif-icons {
   width: 100%;
-  height: 40px;
+  height: 45px;
   display: flex;
   flex-direction: row-reverse;
 }
-.container .box.trend-recommend .written-recomend .gif-card .gif-icons .icon-box {
+.container .box .gif-card .gif-icons .icon-box {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,28 +284,34 @@
   height: 32px;
   margin: 10px 5px;
 }
-.container .box.trend-recommend .written-recomend .gif-card .gif-icons .icon-box a {
+.container .box .gif-card .gif-icons .icon-box a {
   font-size: 20px;
 }
-.container .box.trend-recommend .written-recomend .gif-card.recomended {
+.container .box .gif-card .adaptive-text {
+  padding-top: 90px;
+  height: 50px;
+  width: 100%;
+}
+.container .box .gif-card .adaptive-text .gif-title {
+  margin: 0;
+  padding: 0 0 5px 10px;
+  color: #fff;
+}
+.container .box .gif-card .adaptive-text .gif-title.trend-text {
+  padding-bottom: 30px;
+}
+.container .box .gif-card.recomended {
   width: 260px;
   height: 200px;
 }
-.container .box.trend-recommend .written-recomend .gif-card.trends {
+.container .box .gif-card.trends {
   width: 360px;
   height: 275px;
+  margin: 15px 15px;
 }
-.container .box.trending-gifos {
-  margin-top: 51px;
-  font-size: 20px;
-}
-.container .box.trending-gifos p {
-  margin-top: 10px;
-  margin-bottom: 32px;
-}
-.container .box.gifs {
-  width: 100%;
-  margin-bottom: 82px;
+.container .box .gif-card.trends .adaptive-text {
+  padding-top: 150px;
+  padding-left: 20px;
 }
 .container .box.icon-sect {
   margin-top: 47px;
@@ -305,8 +364,9 @@
 .oscuro .box .search-bar {
   border: 1px solid #fff;
 }
-.oscuro .box .search-bar .button.search-button {
+.oscuro .box .search-bar .search-button {
   display: block;
+  color: #fff;
 }
 .oscuro .box .search-bar .s-text {
   color: grey;
@@ -350,9 +410,13 @@
     display: flex;
     left: auto;
     top: -5px;
-    width: 500px;
+    width: 600px;
     height: 90px;
     background: none;
+  }
+  .menu .home {
+    color: #572EE5;
+    padding: 15px 20px 0 0;
   }
 
   .menu div a {
@@ -368,6 +432,7 @@
     align-items: center;
     width: 54px;
     height: 54px;
+    margin-left: 170px;
     border-radius: 27px;
     border: 2px solid #572EE5;
     color: #572EE5;
@@ -464,6 +529,9 @@
   }
   .oscuro .menu {
     background: none;
+  }
+  .oscuro .menu .home {
+    color: #fff;
   }
   .oscuro .menu div a {
     color: #fff;

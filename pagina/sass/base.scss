@@ -58,6 +58,11 @@
     font-family: $font-monserat;
     width: 100%;
     height: 484px;
+    .home{
+        color: #fff;
+        padding: 17px 0 17px 0;
+        font-size: 20px;
+    }
 }
 .menu div{
     text-align: center;
@@ -134,10 +139,7 @@
 .icon-box:hover{
     background-color: rgba($color: #fff, $alpha: 1.0)  !important;
 }
-.gif-card:hover{
-    //background-color: $main-color;
-    //opacity: 0.6;
-}
+
 
 //container
 .container{
@@ -165,7 +167,7 @@
         .search-bar{
            display: flex;
            align-items: center;
-           justify-content: space-between;
+           justify-content: flex-end;
            margin-top: 29px;
            border-radius: 27px;
            border: 1px solid $main-color;
@@ -173,12 +175,33 @@
            height: 50px;
            min-width: 290px;
            max-width: 550px;
-           .s-text{
-               color: grey;
-               padding-left: 30px;
-               font-size: 16px;
+           .search-button{
+               width: 35px;
+               height: 35px;
+               font-size: 20px;
+               border: 0;
+               color: $main-color;
+               background: transparent;
+               margin-right: 10px;
+            
+           }
+           .s-bar{
+               border: 0;
+               width: 100%;
+               max-width: 450px;
+               min-width: 250px;
+               font: $font-roboto;
+               
+               &.s-text{ 
+                   position: absolute;
+                   color: grey;
+                   background: transparent;
+                   margin-left: -45px;
+                   font-size: 16px;
+                }
             }
         }
+
         &.trend-recommend{
             margin-top: 44px;
             p{
@@ -193,50 +216,10 @@
                 margin-top: 60px;
                 margin-bottom: 80px;
                 flex-wrap: wrap;
-                justify-content: center;
-                
-                .gif-card{
-                    width: 100%;
-                    height: 100%;
-                    max-width: 400px;
-                    min-width: 150px;
-                    max-height: 300px;
-                    min-height: 120px;
-                    background-color: rgba($color: $main-color, $alpha: 0.6);
-                    margin:  15px 15px;
-
-                    .gif-icons{
-                        width: 100%;
-                        height: 40px;
-                        display: flex;
-                        flex-direction: row-reverse;
-                        .icon-box{
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 6px;
-                            background-color: rgba($color: #fff, $alpha: 0.7);
-                            width: 32px;
-                            height: 32px;
-                            margin: 10px 5px;
-                            a{
-                                font-size: 20px;
-                            }
-                        }
-                    }
-                    //especial boxes
-                    &.recomended{
-                        width: 260px;
-                        height: 200px;
-                        
-                    }
-                    &.trends{
-                        width: 360px;
-                        height: 275px;
-                    }
-                }
+                justify-content: center;   
             }
         }
+
         &.trending-gifos{
             margin-top: 51px;
             font-size: $font-large;
@@ -245,11 +228,93 @@
                 margin-bottom: 32px;
             }
         }
-        &.gifs{
-            width: 100%;
-            
-            margin-bottom: 82px;
+        .community{
+            margin-top: 50px;
+            margin-bottom: 140px;
+            line-height: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            &.trends{
+                width: 360px;
+                height: 275px;
+                margin:  15px 15px;
+                .adaptive-text{
+                    padding-top: 150px;
+                    padding-left: 20px;
+                }
+            }
+           
         }
+
+        //gif-cards
+        .gif-card:hover{
+            opacity: 1;
+            transition: .9s ease-out;
+        }
+       
+        .gif-card{
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            max-width: 400px;
+            min-width: 150px;
+            max-height: 300px;
+            min-height: 120px;
+            background-color: rgba($color: $main-color, $alpha: 0.6);
+            margin:  15px 15px;
+            
+
+            .gif-icons{
+                width: 100%;
+                height: 45px;
+                display: flex;
+                flex-direction: row-reverse;
+                .icon-box{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 6px;
+                    background-color: rgba($color: #fff, $alpha: 0.7);
+                    width: 32px;
+                    height: 32px;
+                    margin: 10px 5px;
+                    a{
+                        font-size: 20px;
+                    }
+                }
+            }
+            .adaptive-text{
+                padding-top: 90px;
+                height: 50px;
+                width: 100%;
+                .gif-title{
+                    margin: 0;
+                    padding: 0 0 5px 10px;
+                    color: #fff;
+                    &.trend-text{
+                        padding-bottom: 30px;
+                    }
+                }
+                
+            }
+            //especial boxes
+            &.recomended{
+                width: 260px;
+                height: 200px;
+            }
+            &.trends{
+                width: 360px;
+                height: 275px;
+                margin:  15px 15px;
+                .adaptive-text{
+                    padding-top: 150px;
+                    padding-left: 20px;
+                }
+            }
+        }
+       
+        
         &.icon-sect{
             margin-top: 47px;
             margin-bottom: 46px;
@@ -273,7 +338,6 @@
 //modo oscuro
 
 .oscuro{
-    //esto no queda absoluto
     .footer{
         border-color: $typo-bg-color;
         .container{
@@ -284,7 +348,6 @@
             }
         }
     }
-    //esto no queda absoluto
     .header{
         background: $dark-mode-color;
         .logo{
@@ -316,11 +379,12 @@
     .box{
         .search-bar{
             border: 1px solid #fff;
-            .button{
-                &.search-button{
-                    display: block;
-                }
+            
+            .search-button{
+                display: block;
+                color: #fff;
             }
+            
             .s-text{
                 color: grey;
                 font-size: 16px;
