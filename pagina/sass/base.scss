@@ -79,7 +79,6 @@
 
 
 
-
 //sections
 
 .search-sect, .trending-sect, .footer{ 
@@ -132,6 +131,14 @@
     }
 }
 
+.icon-box:hover{
+    background-color: rgba($color: #fff, $alpha: 1.0)  !important;
+}
+.gif-card:hover{
+    //background-color: $main-color;
+    //opacity: 0.6;
+}
+
 //container
 .container{
     display: flex;
@@ -179,20 +186,53 @@
                 margin-bottom: 44px;
                 font-size: 14px;
             }
-
-            .written-recomend{
+            .written-recomend {
                 width: 100%;
+                display: flex;
+                flex-direction: row;
+                margin-top: 60px;
+                margin-bottom: 80px;
+                flex-wrap: wrap;
+                justify-content: center;
                 
                 .gif-card{
                     width: 100%;
                     height: 100%;
+                    max-width: 400px;
+                    min-width: 150px;
+                    max-height: 300px;
+                    min-height: 120px;
+                    background-color: rgba($color: $main-color, $alpha: 0.6);
+                    margin:  15px 15px;
+
+                    .gif-icons{
+                        width: 100%;
+                        height: 40px;
+                        display: flex;
+                        flex-direction: row-reverse;
+                        .icon-box{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 6px;
+                            background-color: rgba($color: #fff, $alpha: 0.7);
+                            width: 32px;
+                            height: 32px;
+                            margin: 10px 5px;
+                            a{
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                    //especial boxes
                     &.recomended{
-                        max-width: 260px;
-                        min-width: 150px;
-                        max-height: 200px;
-                        min-height: 120px;
-                        background-color: $main-color;
-                        border: 1px solid black;
+                        width: 260px;
+                        height: 200px;
+                        
+                    }
+                    &.trends{
+                        width: 360px;
+                        height: 275px;
                     }
                 }
             }
@@ -207,7 +247,7 @@
         }
         &.gifs{
             width: 100%;
-            height: 187px;
+            
             margin-bottom: 82px;
         }
         &.icon-sect{
@@ -228,6 +268,7 @@
         }
     }
 }
+
 
 //modo oscuro
 
@@ -294,13 +335,20 @@
 
             }
         }
+        .icon-box{
+            a{
+                color: $main-color;
+            }
+        }
     }
     //interacciones
     .links a:active{
         color: #9CAFC3;
         text-decoration: none ;
     }
+
 }
+
 
 
 
