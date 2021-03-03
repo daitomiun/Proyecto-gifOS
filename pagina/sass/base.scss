@@ -86,7 +86,7 @@
 
 //sections
 
-.search-sect, .trending-sect, .footer{ 
+.search-sect, .trending-sect, .favorites-sect, .my-gifs-sect, .footer{ 
     font-family: $font-monserat;
     color: $main-color;
     height: 50%;
@@ -101,6 +101,17 @@
         .black-typo{
             color: $typo-bg-color;
             font-size: $font-small;
+        }
+    }
+}
+
+.search-sect, .favorites-sect, .my-gifs-sect{
+    .empty{
+        margin-top: 100px;
+        margin-bottom: 140px;
+        h1{
+            padding-top: 25px;
+            font-size: 35px;
         }
     }
 }
@@ -216,7 +227,8 @@
                 margin-top: 60px;
                 margin-bottom: 80px;
                 flex-wrap: wrap;
-                justify-content: center;   
+                justify-content: center;  
+                // line-height: 0; 
             }
         }
 
@@ -245,6 +257,16 @@
                 }
             }
            
+        }
+        .favorites, .my-gifs{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-top: 60px;
+            margin-bottom: 80px;
+            flex-wrap: wrap;
+            justify-content: center;  
+            line-height: 0;
         }
 
         //gif-cards
@@ -289,9 +311,13 @@
                 height: 50px;
                 width: 100%;
                 .gif-title{
+                    text-align: start;
                     margin: 0;
                     padding: 0 0 5px 10px;
                     color: #fff;
+                    &.gif-name{
+                        padding: 25px 0 5px 10px;
+                    }
                     &.trend-text{
                         padding-bottom: 30px;
                     }
@@ -299,7 +325,7 @@
                 
             }
             //especial boxes
-            &.recomended{
+            &.recomended, &.fav-state, &.my-state{
                 width: 260px;
                 height: 200px;
             }
@@ -363,7 +389,7 @@
     .fa-times, .fa-bars{
         color: #fff;
     }
-    .search-sect, .trending-sect, footer{
+    .search-sect, .trending-sect, .favorites-sect, .my-gifs-sect, footer{
         color: #fff;
         &.bg-w-g{
             background-color: $dark-mode-color;
