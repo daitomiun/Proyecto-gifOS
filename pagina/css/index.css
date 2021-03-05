@@ -97,12 +97,12 @@
   display: none;
 }
 
-.search-sect, .trending-sect, .favorites-sect, .my-gifs-sect, .create-gif-sect, .footer {
+.search-sect, .trending-sect, .favorites-sect, .my-gifs-sect, .create-gif-sect, .zoom-out-gif-sect, .footer {
   font-family: "Montserrat", sans-serif;
   color: #572EE5;
   height: 50%;
 }
-.search-sect.bg-w-g, .trending-sect.bg-w-g, .favorites-sect.bg-w-g, .my-gifs-sect.bg-w-g, .create-gif-sect.bg-w-g, .footer.bg-w-g {
+.search-sect.bg-w-g, .trending-sect.bg-w-g, .favorites-sect.bg-w-g, .my-gifs-sect.bg-w-g, .create-gif-sect.bg-w-g, .zoom-out-gif-sect.bg-w-g, .footer.bg-w-g {
   display: block;
   height: 50%;
   width: 100%;
@@ -112,7 +112,7 @@
   z-index: 0;
   background-color: #ffffff;
 }
-.search-sect.bg-w-b, .trending-sect.bg-w-b, .favorites-sect.bg-w-b, .my-gifs-sect.bg-w-b, .create-gif-sect.bg-w-b, .footer.bg-w-b {
+.search-sect.bg-w-b, .trending-sect.bg-w-b, .favorites-sect.bg-w-b, .my-gifs-sect.bg-w-b, .create-gif-sect.bg-w-b, .zoom-out-gif-sect.bg-w-b, .footer.bg-w-b {
   display: block;
   height: 50%;
   width: 100%;
@@ -122,7 +122,7 @@
   z-index: 0;
   background-color: #F3F5F8;
 }
-.search-sect.bg-w-b .black-typo, .trending-sect.bg-w-b .black-typo, .favorites-sect.bg-w-b .black-typo, .my-gifs-sect.bg-w-b .black-typo, .create-gif-sect.bg-w-b .black-typo, .footer.bg-w-b .black-typo {
+.search-sect.bg-w-b .black-typo, .trending-sect.bg-w-b .black-typo, .favorites-sect.bg-w-b .black-typo, .my-gifs-sect.bg-w-b .black-typo, .create-gif-sect.bg-w-b .black-typo, .zoom-out-gif-sect.bg-w-b .black-typo, .footer.bg-w-b .black-typo {
   color: #000;
   font-size: 14px;
 }
@@ -255,9 +255,12 @@
   min-height: 300px;
   border: 1px solid #572EE5;
 }
+.container .box .create-gif .progress-box {
+  display: contents;
+}
 .container .box .create-gif .progress-box .progress-numbers {
   display: flex;
-  width: 200px;
+  justify-content: center;
   height: 40px;
   margin: 25px 0 20px 0;
 }
@@ -272,6 +275,28 @@
   margin: 0 13px 0 13px;
 }
 .container .box .create-gif .progress-box .progress-numbers .progress-circle:active {
+  background-color: #572EE5;
+  color: #fff;
+}
+.container .box .create-gif .progress-box .progress-bar {
+  width: 100%;
+  height: 7px;
+  max-width: 800px;
+  min-width: 310px;
+  border-radius: 3px;
+  background-color: #572EE5;
+}
+.container .box .create-gif .progress-box .progress-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid #572EE5;
+  margin-top: 20px;
+}
+.container .box .create-gif .progress-box .progress-button:hover {
   background-color: #572EE5;
   color: #fff;
 }
@@ -410,16 +435,16 @@
 .oscuro .fa-times, .oscuro .fa-bars {
   color: #fff;
 }
-.oscuro .search-sect, .oscuro .trending-sect, .oscuro .favorites-sect, .oscuro .my-gifs-sect, .oscuro .create-gif-sect, .oscuro footer {
+.oscuro .search-sect, .oscuro .trending-sect, .oscuro .favorites-sect, .oscuro .my-gifs-sect, .oscuro .create-gif-sect, .oscuro .zoom-out-gif-sect, .oscuro footer {
   color: #fff;
 }
-.oscuro .search-sect.bg-w-g, .oscuro .trending-sect.bg-w-g, .oscuro .favorites-sect.bg-w-g, .oscuro .my-gifs-sect.bg-w-g, .oscuro .create-gif-sect.bg-w-g, .oscuro footer.bg-w-g {
+.oscuro .search-sect.bg-w-g, .oscuro .trending-sect.bg-w-g, .oscuro .favorites-sect.bg-w-g, .oscuro .my-gifs-sect.bg-w-g, .oscuro .create-gif-sect.bg-w-g, .oscuro .zoom-out-gif-sect.bg-w-g, .oscuro footer.bg-w-g {
   background-color: #37383C;
 }
-.oscuro .search-sect.bg-w-b, .oscuro .trending-sect.bg-w-b, .oscuro .favorites-sect.bg-w-b, .oscuro .my-gifs-sect.bg-w-b, .oscuro .create-gif-sect.bg-w-b, .oscuro footer.bg-w-b {
+.oscuro .search-sect.bg-w-b, .oscuro .trending-sect.bg-w-b, .oscuro .favorites-sect.bg-w-b, .oscuro .my-gifs-sect.bg-w-b, .oscuro .create-gif-sect.bg-w-b, .oscuro .zoom-out-gif-sect.bg-w-b, .oscuro footer.bg-w-b {
   background-color: #222326;
 }
-.oscuro .search-sect.bg-w-b .black-typo, .oscuro .trending-sect.bg-w-b .black-typo, .oscuro .favorites-sect.bg-w-b .black-typo, .oscuro .my-gifs-sect.bg-w-b .black-typo, .oscuro .create-gif-sect.bg-w-b .black-typo, .oscuro footer.bg-w-b .black-typo {
+.oscuro .search-sect.bg-w-b .black-typo, .oscuro .trending-sect.bg-w-b .black-typo, .oscuro .favorites-sect.bg-w-b .black-typo, .oscuro .my-gifs-sect.bg-w-b .black-typo, .oscuro .create-gif-sect.bg-w-b .black-typo, .oscuro .zoom-out-gif-sect.bg-w-b .black-typo, .oscuro footer.bg-w-b .black-typo {
   color: #fff;
 }
 .oscuro .box .search-bar {
@@ -445,7 +470,17 @@
 .oscuro .box .create-gif .progress-box .progress-circle {
   background-color: #fff;
   border: 1px solid #fff;
-  color: #572EE5;
+  color: #37383C;
+}
+.oscuro .box .create-gif .progress-box .progress-bar {
+  background-color: #fff;
+}
+.oscuro .box .create-gif .progress-box .progress-button {
+  border: 1px solid #fff;
+}
+.oscuro .box .create-gif .progress-box .progress-button:hover {
+  background-color: #fff;
+  color: #37383C;
 }
 .oscuro .links a:active {
   color: #9CAFC3;
