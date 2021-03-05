@@ -86,7 +86,8 @@
 
 //sections
 
-.search-sect, .trending-sect, .favorites-sect, .my-gifs-sect, .footer{ 
+.search-sect, .trending-sect, .favorites-sect, .my-gifs-sect, .create-gif-sect, .footer{ 
+    
     font-family: $font-monserat;
     color: $main-color;
     height: 50%;
@@ -105,7 +106,7 @@
     }
 }
 
-.search-sect, .favorites-sect, .my-gifs-sect{
+.search-sect, .favorites-sect, .my-gifs-sect {
     .empty{
         margin-top: 100px;
         margin-bottom: 140px;
@@ -115,6 +116,8 @@
         }
     }
 }
+
+
 
 //esto no queda absoluto
 .footer{
@@ -199,9 +202,9 @@
            .s-bar{
                border: 0;
                width: 100%;
-               max-width: 450px;
+               max-width: 400px;
                min-width: 250px;
-               font: $font-roboto;
+               font-family: $font-roboto;
                
                &.s-text{ 
                    position: absolute;
@@ -228,9 +231,55 @@
                 margin-bottom: 80px;
                 flex-wrap: wrap;
                 justify-content: center;  
-                // line-height: 0; 
+                 
             }
         }
+
+        .create-gif{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .gif-camera{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                max-width:  700px;
+                min-width: 300px;
+                max-height: 390px;
+                min-height: 300px;
+                border: 1px solid $main-color;
+            }
+            .progress-box{
+
+                .progress-numbers{
+                    display: flex;
+                    width: 200px;
+                    height: 40px;
+                    margin: 25px 0 20px 0;
+                    .progress-circle{
+                        align-items: center;
+                        justify-content: center;
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 16px;
+                        border: 1px solid $main-color;
+                        padding-top: 5px;
+                        margin: 0 13px 0 13px;
+                    }
+                    .progress-circle:active{
+                        background-color: $main-color;
+                        color: #fff;
+
+                    }
+                }
+            }
+        }
+
+
+
 
         &.trending-gifos{
             margin-top: 51px;
@@ -389,7 +438,7 @@
     .fa-times, .fa-bars{
         color: #fff;
     }
-    .search-sect, .trending-sect, .favorites-sect, .my-gifs-sect, footer{
+    .search-sect, .trending-sect, .favorites-sect, .my-gifs-sect, .create-gif-sect, footer{
         color: #fff;
         &.bg-w-g{
             background-color: $dark-mode-color;
@@ -403,6 +452,7 @@
         }
     }
     .box{
+     
         .search-bar{
             border: 1px solid #fff;
             
@@ -430,12 +480,27 @@
                 color: $main-color;
             }
         }
+        .create-gif{
+            .gif-camera{
+                border: 1px solid #fff;
+            }
+            .progress-box{
+                .progress-circle{
+                    background-color: #fff;
+                    border: 1px solid #fff;
+                    color: $main-color;
+
+                }
+               
+            }
+        }
     }
     //interacciones
     .links a:active{
         color: #9CAFC3;
         text-decoration: none ;
     }
+ 
 
 }
 
