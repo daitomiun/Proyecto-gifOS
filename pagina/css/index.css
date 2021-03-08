@@ -127,6 +127,14 @@
   font-size: 14px;
 }
 
+#search-sect {
+  display: block;
+}
+
+#favorites-sect, #my-gifs-sect, #create-gif-sect {
+  display: none;
+}
+
 .search-sect .empty, .favorites-sect .empty, .my-gifs-sect .empty {
   margin-top: 100px;
   margin-bottom: 140px;
@@ -188,7 +196,7 @@
 .container .box .search-bar {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 29px;
   border-radius: 27px;
   border: 1px solid #572EE5;
@@ -214,11 +222,13 @@
   font-family: "roboto", sans-serif;
 }
 .container .box .search-bar .s-bar.s-text {
-  position: absolute;
+  position: relative;
   color: grey;
   background: transparent;
-  margin-left: -45px;
+  outline: none;
   font-size: 16px;
+  width: 300px;
+  margin-left: 40px;
 }
 .container .box.trend-recommend {
   margin-top: 44px;
@@ -521,6 +531,9 @@
   .menu .home {
     color: #572EE5;
     padding: 15px 20px 0 0;
+  }
+  .menu .button-min {
+    display: none;
   }
 
   .menu div a {

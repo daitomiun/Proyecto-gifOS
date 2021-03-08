@@ -1,4 +1,4 @@
-/* https://developers.giphy.com/explorer/ */
+// /* https://developers.giphy.com/explorer/ */
 
 const fetchData = require("./fetchData.js");
 let apikey = "j2lEFfMiqpn38YVWrgdRb3YmJjuJUPnt";

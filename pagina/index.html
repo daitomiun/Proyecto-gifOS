@@ -30,24 +30,25 @@
                 </div>
             </label>
             <div class="menu">
-                <div class="home links">
+                <div class="home links" id="home" >
                     <a href="#">
                         <i class="fas fa-home"></i>
                     </a>
                 </div>
                 <div  id="modo" class="links"><a  href="#">modo nocturno</a></div>
-                <div class="links"><a  href="#">mis gifos</a></div>
-                <div class="links"><a  href="#">favoritos</a></div>
+                <div class="links" id="mis-gifos"><a  href="#">mis gifos</a></div>
+                <div class="links" id="favoritos"><a  href="#">favoritos</a></div>
+                <div class="button-min links" id="crear-gifos"><a href="#">crea gifOS</a></div>
             </div>
         </div>
-        <div class="button">
+        <div class="button" id="crear-gifos-btn">
             <div class="cross">
                 <i class="fas fa-plus"></i>
             </div>
             <a href="#"></a>
         </div>
     </header>
-    <section class="search-sect bg-w-g">
+    <section class="search-sect bg-w-g" id="search-sect">
         <div class="container title-align">
             <div class="box title-align">
                 <h1>Inspirate,busca, <br class="repair-br" >
@@ -108,7 +109,7 @@
             </div>
         </div>
     </section>
-    <section class="favorites-sect bg-w-g">
+    <section class="favorites-sect bg-w-g" id="favorites-sect">
         <div class="container">
             <div class="box title-align">
                 <img src="assets/icon-favoritos.svg" alt="" srcset="" >
@@ -145,7 +146,7 @@
             </div>
         </div>
     </section>
-    <section class="my-gifs-sect bg-w-g">
+    <section class="my-gifs-sect bg-w-g" id="my-gifs-sect" >
         <div class="container">
             <div class="box title-align">
                 <img src="assets/icon-mis-gifos.svg" alt="" srcset="" >
@@ -180,7 +181,7 @@
             </div>
         </div>
     </section>
-    <section class="create-gif-sect bg-w-g">
+    <section class="create-gif-sect bg-w-g" id="create-gif-sect">
         <div class="container">
             <div class="box title-align">
                 <div class="create-gif">
@@ -221,7 +222,7 @@
             </div>
         </div>
     </section>
-    <section class="zoom-out-gif-sect bg-w-g">
+    <!-- <section class="zoom-out-gif-sect bg-w-g" id="zoom-out-gif-sect">
        <div class="container">
            <div class="box">
                <div class="zoom-out">
@@ -241,8 +242,8 @@
                </div>
            </div>
        </div>
-    </section>
-    <section class="trending-sect bg-w-b">
+    </section> -->
+    <section class="trending-sect bg-w-b" id="trending-sect">
         <div class="container">
             <div class="box title-align trending-gifos">
                 <h4>TRENDING GIFOS</h4>
@@ -292,5 +293,8 @@
         </div>
     </footer>
     <script src="js/modes.js"></script>
+    <script src="js/fetch_data.js"></script>
+    <script src="js/peticiones.js"></script>
+    <script src="js/events.js"></script>
 </body>
 </html>
