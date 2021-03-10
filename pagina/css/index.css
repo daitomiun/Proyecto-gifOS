@@ -132,7 +132,13 @@
 }
 
 #favorites-sect, #my-gifs-sect, #create-gif-sect {
+  padding-top: 11px;
   display: none;
+}
+
+#create-gif-sect {
+  padding-top: 5rem;
+  padding-bottom: 10rem;
 }
 
 .search-sect .empty, .favorites-sect .empty, .my-gifs-sect .empty {
@@ -335,7 +341,7 @@
   padding-top: 150px;
   padding-left: 20px;
 }
-.container .box .favorites, .container .box .my-gifs {
+.container .box .favorites, .container .box .my-gifs, .container .box .recomendeds {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -376,7 +382,8 @@
   height: 32px;
   margin: 10px 5px;
 }
-.container .box .gif-card .gif-icons .icon-box a {
+.container .box .gif-card .gif-icons .icon-box i {
+  color: #572EE5;
   font-size: 20px;
 }
 .container .box .gif-card .adaptive-text {
