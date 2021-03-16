@@ -380,6 +380,11 @@
             background-color: rgba($color: $main-color, $alpha: 0.6);
             margin:  15px 15px;
             
+            #gif{
+                position: absolute;
+                width: 260px;
+                height: 200px;
+            }
 
             .gif-icons{
                 width: 100%;

@@ -366,6 +366,11 @@
   background-color: rgba(87, 46, 229, 0.6);
   margin: 15px 15px;
 }
+.container .box .gif-card #gif {
+  position: absolute;
+  width: 260px;
+  height: 200px;
+}
 .container .box .gif-card .gif-icons {
   width: 100%;
   height: 45px;

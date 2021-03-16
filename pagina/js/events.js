@@ -13,10 +13,6 @@ let misGifos = document.querySelector("#mis-gifos a");
 
 //sections
 
-// let secBusqueda = document.getElementById("search-sect").style.display = "block";
-// let secFavoritos = document.getElementById("favorites-sect").style.display = "none";
-// let secCrear = document.getElementById("create-gif-sect").style.display = "none";
-// let secMigif = document.getElementById("my-gifs-sect").style.display = "none";
 
 let secBusqueda = document.getElementById("search-sect");
 let secFavoritos = document.getElementById("favorites-sect");
