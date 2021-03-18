@@ -370,6 +370,7 @@
   position: absolute;
   width: 260px;
   height: 200px;
+  z-index: -1;
 }
 .container .box .gif-card .gif-icons {
   width: 100%;
