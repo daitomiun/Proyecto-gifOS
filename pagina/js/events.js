@@ -9,16 +9,19 @@ let crearGif = document.querySelector("#crear-gifos");
 let crearGifBtn = document.querySelector("#crear-gifos-btn")
 let misGifos = document.querySelector("#mis-gifos a");
 
-
+let output = document.querySelector("#btn");
+      
 
 //sections
-
+ 
 
 let secBusqueda = document.getElementById("search-sect");
 let secFavoritos = document.getElementById("favorites-sect");
 let secCrear = document.getElementById("create-gif-sect");
 let secMigif = document.getElementById("my-gifs-sect");
 let trends = document.getElementById("trending-sect")
+
+let gifCard = document.getElementsByClassName("gif-card");
 
 
 //evento onclick
@@ -73,6 +76,11 @@ misGifos.addEventListener("click", (e)=>
 }
 );
 
+output.addEventListener("click", (e)=>
+{
+  gifCard.style.display = "block";
+}
+);
 
 //slides
 

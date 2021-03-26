@@ -351,34 +351,42 @@
   justify-content: center;
   line-height: 0;
 }
-.container .box .gif-card:hover {
-  opacity: 1;
-  transition: 0.9s ease-out;
-}
 .container .box .gif-card {
-  opacity: 0;
+  display: none;
+  opacity: 1;
   width: 100%;
   height: 100%;
   max-width: 400px;
   min-width: 150px;
   max-height: 300px;
   min-height: 120px;
-  background-color: rgba(87, 46, 229, 0.6);
   margin: 15px 15px;
+  z-index: 1;
 }
-.container .box .gif-card #gif {
+.container .box .gif-card #gif-1 {
   position: absolute;
   width: 260px;
   height: 200px;
+  opacity: 1;
   z-index: -1;
+  display: block;
 }
-.container .box .gif-card .gif-icons {
+.container .box .gif-card #gif-1 img {
+  width: 260px;
+  height: 200px;
+  display: block;
+}
+.container .box .gif-card .gif-box {
+  opacity: 0;
+  background-color: rgba(87, 46, 229, 0.6);
+}
+.container .box .gif-card .gif-box .gif-icons {
   width: 100%;
   height: 45px;
   display: flex;
   flex-direction: row-reverse;
 }
-.container .box .gif-card .gif-icons .icon-box {
+.container .box .gif-card .gif-box .gif-icons .icon-box {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -388,28 +396,32 @@
   height: 32px;
   margin: 10px 5px;
 }
-.container .box .gif-card .gif-icons .icon-box i {
+.container .box .gif-card .gif-box .gif-icons .icon-box i {
   color: #572EE5;
   font-size: 20px;
 }
-.container .box .gif-card .adaptive-text {
+.container .box .gif-card .gif-box .adaptive-text {
   padding-top: 90px;
   height: 50px;
   width: 100%;
 }
-.container .box .gif-card .adaptive-text .gif-title {
+.container .box .gif-card .gif-box .adaptive-text .gif-title {
   text-align: start;
   margin: 0;
   padding: 0 0 5px 10px;
   color: #fff;
 }
-.container .box .gif-card .adaptive-text .gif-title.gif-name {
+.container .box .gif-card .gif-box .adaptive-text .gif-title.gif-name {
   padding: 25px 0 5px 10px;
 }
-.container .box .gif-card .adaptive-text .gif-title.trend-text {
+.container .box .gif-card .gif-box .adaptive-text .gif-title.trend-text {
   padding-bottom: 30px;
 }
 .container .box .gif-card.recomended, .container .box .gif-card.fav-state, .container .box .gif-card.my-state {
+  width: 260px;
+  height: 200px;
+}
+.container .box .gif-card.recomended .gif-box, .container .box .gif-card.fav-state .gif-box, .container .box .gif-card.my-state .gif-box {
   width: 260px;
   height: 200px;
 }
@@ -421,6 +433,10 @@
 .container .box .gif-card.trends .adaptive-text {
   padding-top: 150px;
   padding-left: 20px;
+}
+.container .box .gif-box:hover {
+  opacity: 1;
+  transition: 0.9s ease-out;
 }
 .container .box.icon-sect {
   margin-top: 47px;

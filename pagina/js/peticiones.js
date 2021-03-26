@@ -48,30 +48,66 @@
       | Calls de gifs |
       ----------------- */
       
+
+
+
+      //search
+
       async function callApi(){
-        let apiKey = "VZ4N6ebz6BSdgrhUNiKAAU0dNYws5GSn";
-        let uInput= document.getElementById("search").value;
+        var uInput= document.getElementById("search").value;
+        var apiKey = "VZ4N6ebz6BSdgrhUNiKAAU0dNYws5GSn";
         //0m6p9UIK0QqEfA8GmlLnGoKcW873s8Ld
-        const elFetch =await fetch(`https://api.giphy.com/v1/gifs/search/tags?q=${uInput}&api_key=${apiKey}`);
+        const elFetch =await fetch(`https://api.giphy.com/v1/gifs/search/tags?q=${uInput}&api_key=${apiKey}&limit=1`);
         // const elFecth = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apikey}&limit=${limit}`);
         laData =await  elFetch.json();
         console.log(laData);
 
-        let gif = document.getElementById("gif");
-        // console.log(laData.data[0].images.fixed_height.url)
-        // let imgPath = laData.data[0].images.fixed_height.url;
-        console.log(laData.data[0])
-        let imgPath = laData.data[0];
-        let img = document.createElement("img");
-        img.setAttribute("src", imgPath);
-        document.body.appendChild(img);
-
-       
+        
+        
       } 
-      callApi();
+      //callApi();
+      
+      
+      //gifs
+      
+      async function gifCall(json){
 
 
-      //search
+        var uInput= document.getElementById("search").value;
+        var apiKey = "VZ4N6ebz6BSdgrhUNiKAAU0dNYws5GSn";
+        let container = document.getElementById("gif-1");
+
+        
+        // const fetchGif = await fetch(`https://api.giphy.com/v1/gifs/search?q=${uInput}&api_key=${apiKey}&limit=12`)
+        
+
+        const fetchGif = await fetch(`https://api.giphy.com/v1/gifs/search?q=${uInput}&api_key=${apiKey}&limit=12`)
+        let dataGif= await fetchGif.json();
+        console.log(dataGif)
+        console.log(dataGif.data[0].images.fixed_height.url)
+        let imgPath = dataGif.data[0].images.fixed_width.url;
+        let gif = document.createElement("img");
+        gif.setAttribute("src", imgPath);
+        container.appendChild(gif);
+
+      
+      }
+      //gifCall();
+      
+      
+      // let output = document.querySelector("btn");
+      // let gifCard = document.getElementsByClassName("gif-card");
+      
+      // output.addEventListener("click", (e)=>
+      // {
+      //   gifCard.style.display = "block";
+      // }
+      // );
+
+
+
+
+      
 
 
      

@@ -65,7 +65,7 @@
                 </div>
                 <div class="search-bar">
                     <input type="search" class="s-bar s-text" id="search" placeholder="Buca gifos y mas">
-                    <button class="search-button" type="submit" id="btn" onclick="callApi()"> 
+                    <button class="search-button" type="submit" id="btn" onclick="gifCall()"> 
                         <i class='fas fa-search'></i>
                     </button>
                 </div>     
@@ -80,20 +80,22 @@
              <div class="show-requested">
                 <div class="written-recomend">
                     <div class="gif-card recomended">
-                        <video src="" id="gif"></video>
-                        <div class="gif-icons">
-                            <div class="icon-box heart">
-                                <i class='fas fa-search-plus'></i>
+                        <div id="gif-1"></div>
+                        <div class="gif-box">
+                            <div class="gif-icons">
+                                <div class="icon-box heart">
+                                    <i class='fas fa-search-plus'></i>
+                                </div>
+                                <div class="icon-box download">
+                                    <i class="fas fa-download"></i>
+                                </div>
+                                <div class="icon-box zoom">
+                                    <i class="far fa-heart"></i>
+                                </div>
                             </div>
-                            <div class="icon-box download">
-                                <i class="fas fa-download"></i>
+                            <div class="adaptive-text">
+                                <P class="gif-title">Nombre gifos</P>
                             </div>
-                            <div class="icon-box zoom">
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="adaptive-text">
-                            <P class="gif-title">Nombre gifos</P>
                         </div>
                     </div>
                 </div>
@@ -117,22 +119,24 @@
                 <h2 >Favoritos</h2>
                 <div class="favorites">
                     <div class="gif-card fav-state">
-                        <div class="gif-icons">
-                            <div class="icon-box zoom">
-                                <i class='fas fa-search-plus'></i>
+                        <div class="gif-box">
+                            <div class="gif-icons">
+                                <div class="icon-box zoom">
+                                    <i class='fas fa-search-plus'></i>
+                                </div>
+                                <div class="icon-box download">
+                                    <i class="fas fa-download" ></i>
+                                </div>
+                                <!-- <div class="icon-box heart">
+                                    <a class="far fa-heart" target="_blank"></a>
+                                </div> -->
+                                <div class="icon-box garbage">
+                                    <i class="fa fa-trash"></i>
+                                </div>
                             </div>
-                            <div class="icon-box download">
-                                <i class="fas fa-download" ></i>
+                            <div class="adaptive-text">
+                                <P class="gif-name gif-title">Nombre gifos</P>
                             </div>
-                            <!-- <div class="icon-box heart">
-                                <a class="far fa-heart" target="_blank"></a>
-                            </div> -->
-                            <div class="icon-box garbage">
-                                <i class="fa fa-trash"></i>
-                            </div>
-                        </div>
-                        <div class="adaptive-text">
-                            <P class="gif-name gif-title">Nombre gifos</P>
                         </div>
                     </div>
                 </div>
@@ -156,19 +160,21 @@
                 <h2 >Mis gifos</h2>
                 <div class="my-gifs">
                     <div class="gif-card my-state">
-                        <div class="gif-icons">
-                            <div class="icon-box zoom">
-                                <i class='fas fa-search-plus'></i>
+                        <div class="gif-box">
+                            <div class="gif-icons">
+                                <div class="icon-box zoom">
+                                    <i class='fas fa-search-plus'></i>
+                                </div>
+                                <div class="icon-box download">
+                                    <i class="fas fa-download"></i>
+                                </div>
+                                <div class="icon-box garbage">
+                                    <i class="fa fa-trash"></i>
+                                </div>
                             </div>
-                            <div class="icon-box download">
-                                <i class="fas fa-download"></i>
+                            <div class="adaptive-text">
+                                <P class="gif-name gif-title">Nombre gifos</P>
                             </div>
-                            <div class="icon-box garbage">
-                                <i class="fa fa-trash"></i>
-                            </div>
-                        </div>
-                        <div class="adaptive-text">
-                            <P class="gif-name gif-title">Nombre gifos</P>
                         </div>
                     </div>
                 </div>

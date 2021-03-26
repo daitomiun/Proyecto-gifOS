@@ -364,72 +364,91 @@
         }
 
         //gif-cards
-        .gif-card:hover{
-            opacity: 1;
-            transition: .9s ease-out;
-        }
+      
        
         .gif-card{
-            opacity: 0;
+            display: none;
+            opacity: 1;
             width: 100%;
             height: 100%;
             max-width: 400px;
             min-width: 150px;
             max-height: 300px;
             min-height: 120px;
-            background-color: rgba($color: $main-color, $alpha: 0.6);
             margin:  15px 15px;
+            z-index: 1;
             
-            #gif{
+            #gif-1{
                 position: absolute;
                 width: 260px;
                 height: 200px;
+                opacity: 1;
                 z-index: -1;
+                display: block;
+                
+
+                img{
+                    width: 260px;
+                    height: 200px;
+                    display: block;
+                    
+                }
             }
 
-            .gif-icons{
-                width: 100%;
-                height: 45px;
-                display: flex;
-                flex-direction: row-reverse;
-                .icon-box{
+            .gif-box{
+                opacity: 0;
+                background-color: rgba($color: $main-color, $alpha: 0.6);
+                .gif-icons{
+                    width: 100%;
+                    height: 45px;
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 6px;
-                    background-color: rgba($color: #fff, $alpha: 0.7);
-                    width: 32px;
-                    height: 32px;
-                    margin: 10px 5px;
-                    i{
-                        color: $main-color;
-                        font-size: 20px;
+                    flex-direction: row-reverse;
+                    .icon-box{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 6px;
+                        background-color: rgba($color: #fff, $alpha: 0.7);
+                        width: 32px;
+                        height: 32px;
+                        margin: 10px 5px;
+                        i{
+                            color: $main-color;
+                            font-size: 20px;
+                        }
                     }
                 }
-            }
-            .adaptive-text{
-                padding-top: 90px;
-                height: 50px;
-                width: 100%;
-                .gif-title{
-                    text-align: start;
-                    margin: 0;
-                    padding: 0 0 5px 10px;
-                    color: #fff;
-                    &.gif-name{
-                        padding: 25px 0 5px 10px;
+                .adaptive-text{
+                    padding-top: 90px;
+                    height: 50px;
+                    width: 100%;
+                    .gif-title{
+                        text-align: start;
+                        margin: 0;
+                        padding: 0 0 5px 10px;
+                        color: #fff;
+                        &.gif-name{
+                            padding: 25px 0 5px 10px;
+                        }
+                        &.trend-text{
+                            padding-bottom: 30px;
+                        }
                     }
-                    &.trend-text{
-                        padding-bottom: 30px;
-                    }
+                    
                 }
-                
             }
+
+            
             //especial boxes
             &.recomended, &.fav-state, &.my-state{
                 width: 260px;
                 height: 200px;
+                .gif-box{
+                    width: 260px;
+                    height: 200px;
+                }
             }
+          
             &.trends{
                 width: 360px;
                 height: 275px;
@@ -440,7 +459,10 @@
                 }
             }
         }
-       
+        .gif-box:hover{
+            opacity: 1;
+            transition: .9s ease-out;
+        }
         
         &.icon-sect{
             margin-top: 47px;
@@ -457,6 +479,7 @@
         }
         &.rights{
             margin-bottom: 26px;
+            
         }
     }
 }
