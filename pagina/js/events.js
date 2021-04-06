@@ -9,7 +9,7 @@ let crearGif = document.querySelector("#crear-gifos");
 let crearGifBtn = document.querySelector("#crear-gifos-btn")
 let misGifos = document.querySelector("#mis-gifos a");
 
-let output = document.querySelector("#btn");
+// let output = document.querySelector("#btn");
       
 
 //sections
@@ -21,12 +21,12 @@ let secCrear = document.getElementById("create-gif-sect");
 let secMigif = document.getElementById("my-gifs-sect");
 let trends = document.getElementById("trending-sect")
 
-let gifCard = document.getElementsByClassName("gif-card");
+// let gifCard = document.getElementsByClassName("gif-card");
 
 
 //evento onclick
 
-home.addEventListener("click", (e)=> 
+home.addEventListener("click", ()=> 
 {
     secBusqueda.style.display = "block";
     secFavoritos.style.display = "none";
@@ -36,7 +36,7 @@ home.addEventListener("click", (e)=>
 }
 );
 
-favoritos.addEventListener("click", (e)=> 
+favoritos.addEventListener("click", ()=> 
 {
     secBusqueda.style.display = "none";
     secFavoritos.style.display = "block";
@@ -46,7 +46,7 @@ favoritos.addEventListener("click", (e)=>
 }
 );
 
-crearGif.addEventListener("click", (e)=> 
+crearGif.addEventListener("click", ()=> 
 {
     secBusqueda.style.display = "none";
     secFavoritos.style.display = "none";
@@ -56,7 +56,7 @@ crearGif.addEventListener("click", (e)=>
 }
 );
 
-crearGifBtn.addEventListener("click", (e)=> 
+crearGifBtn.addEventListener("click", ()=> 
 {
     secBusqueda.style.display = "none";
     secFavoritos.style.display = "none";
@@ -66,7 +66,7 @@ crearGifBtn.addEventListener("click", (e)=>
 }
 );
 
-misGifos.addEventListener("click", (e)=> 
+misGifos.addEventListener("click", ()=> 
 {
     secBusqueda.style.display = "none";
     secFavoritos.style.display = "none";
@@ -76,11 +76,11 @@ misGifos.addEventListener("click", (e)=>
 }
 );
 
-output.addEventListener("click", (e)=>
-{
-  gifCard.style.display = "block";
-}
-);
+// output.addEventListener("click", (e)=>
+// {
+//   gifCard.style.display = "block";
+// }
+// );
 
 //slides
 

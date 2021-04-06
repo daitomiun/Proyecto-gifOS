@@ -65,35 +65,81 @@
         
         
       } 
-      //callApi();
+      
       
       
       //gifs
       
-      async function gifCall(json){
+      async function gifCall(){
 
 
         var uInput= document.getElementById("search").value;
         var apiKey = "VZ4N6ebz6BSdgrhUNiKAAU0dNYws5GSn";
+        
+        let limit = 12;
         let container = document.getElementById("gif-1");
+        
 
         
         // const fetchGif = await fetch(`https://api.giphy.com/v1/gifs/search?q=${uInput}&api_key=${apiKey}&limit=12`)
         
 
-        const fetchGif = await fetch(`https://api.giphy.com/v1/gifs/search?q=${uInput}&api_key=${apiKey}&limit=12`)
+        const fetchGif = await fetch(`https://api.giphy.com/v1/gifs/search?q=${uInput}&api_key=${apiKey}&limit=${limit}`)
         let dataGif= await fetchGif.json();
-        console.log(dataGif)
-        console.log(dataGif.data[0].images.fixed_height.url)
-        let imgPath = dataGif.data[0].images.fixed_width.url;
-        let gif = document.createElement("img");
-        gif.setAttribute("src", imgPath);
-        container.appendChild(gif);
+        
+        
+        let recomend = document.getElementsByName("written-recomend")
+        
+        for (let i = 0; i<limit; i++){
+          
+                  console.log(dataGif);
+                  console.log(dataGif.data[0].images.fixed_height.url);
+                  let imgPath = dataGif.data[0].images.fixed_width.url;
+          
+                  let gif = document.createElement("img");
+                  gif.setAttribute("src", imgPath);
+                  container.appendChild(gif);
+         
+         let element = document.createElement("div");
+         element.className = "gif-card";
+  
+         element.innerHTML = 
+         `
+         <div id="gif-1"></div>
+         <div class="gif-box">
+           <div class="gif-icons">
+             <div class="icon-box heart">
+               <i class='fas fa-search-plus'></i>
+             </div>
+             <div class="icon-box download">
+               <i class="fas fa-download"></i>
+             </div>
+             <div class="icon-box zoom">
+               <i class="far fa-heart"></i>
+             </div>
+           </div>
+           <div class="adaptive-text">
+             <P class="gif-title">Nombre gifos</P>
+           </div>
+         </div>
+         `;
+         recomend.appendChild(element);
+       }
+        
+        
+      }
+      
+
 
       
-      }
       //gifCall();
+
+        
+        
+             
+
       
+
       
       // let output = document.querySelector("btn");
       // let gifCard = document.getElementsByClassName("gif-card");
