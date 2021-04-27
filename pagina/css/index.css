@@ -141,6 +141,15 @@
   padding-bottom: 10rem;
 }
 
+.search-sect .empty-search, .favorites-sect .empty-search, .my-gifs-sect .empty-search {
+  display: none;
+  margin-top: 100px;
+  margin-bottom: 140px;
+}
+.search-sect .empty-search h1, .favorites-sect .empty-search h1, .my-gifs-sect .empty-search h1 {
+  padding-top: 25px;
+  font-size: 35px;
+}
 .search-sect .empty, .favorites-sect .empty, .my-gifs-sect .empty {
   margin-top: 100px;
   margin-bottom: 140px;
@@ -148,6 +157,9 @@
 .search-sect .empty h1, .favorites-sect .empty h1, .my-gifs-sect .empty h1 {
   padding-top: 25px;
   font-size: 35px;
+}
+.search-sect #empty-search, .favorites-sect #empty-search, .my-gifs-sect #empty-search {
+  display: none;
 }
 
 .footer {
@@ -229,11 +241,12 @@
   color: grey;
   background: transparent;
   outline: none;
-  font-size: 16px;
+  font-size: 1.3rem;
   width: 100%;
   min-width: 200px;
-  max-width: 500px;
+  max-width: 490px;
   margin-left: 40px;
+  height: 2rem;
 }
 .container .box.trend-recommend {
   margin-top: 44px;
@@ -252,6 +265,24 @@
   flex-wrap: wrap;
   justify-content: center;
   scroll-behavior: smooth;
+}
+.container .box.trend-recommend .show-requested {
+  display: contents;
+}
+.container .box.trend-recommend .show-requested .more-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid #572EE5;
+  margin-top: 20px;
+  padding-top: 2rem;
+}
+.container .box.trend-recommend .show-requested .more-button:hover {
+  background-color: #572EE5;
+  color: #fff;
 }
 .container .box .create-gif {
   display: flex;
@@ -353,6 +384,7 @@
 }
 .container .box .gif-card {
   display: block;
+  position: relative;
   opacity: 1;
   width: 100%;
   height: 100%;
@@ -364,7 +396,8 @@
   z-index: 1;
 }
 .container .box .gif-card .gif-box {
-  opacity: 0;
+  display: none;
+  position: absolute;
   background-color: rgba(87, 46, 229, 0.6);
 }
 .container .box .gif-card .gif-box .gif-icons {
@@ -429,10 +462,9 @@
   padding-top: 150px;
   padding-left: 20px;
 }
-.container .box .gif-box:hover {
-  opacity: 1;
+.container .box .gif-card:hover .gif-box {
+  display: block;
   transition: 0.9s ease-out;
-  animation-iteration-count: infinite;
 }
 .container .box.icon-sect {
   margin-top: 47px;
@@ -449,6 +481,13 @@
   margin-bottom: 26px;
 }
 
+.oscuro .search-sect .container .show-requested .more-button {
+  border: #fff 1px solid;
+}
+.oscuro .search-sect .container .show-requested .more-button:hover {
+  background-color: #fff;
+  color: #37383C;
+}
 .oscuro .footer {
   border-color: #000;
 }

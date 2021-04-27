@@ -4,7 +4,7 @@
 //links
 
 let home = document.querySelector("#home");
-let favoritos = document.querySelector("#favoritos a");
+let favoritosBtn = document.querySelector("#favoritos a");
 let crearGif = document.querySelector("#crear-gifos");
 let crearGifBtn = document.querySelector("#crear-gifos-btn")
 let misGifos = document.querySelector("#mis-gifos a");
@@ -21,7 +21,7 @@ let secCrear = document.getElementById("create-gif-sect");
 let secMigif = document.getElementById("my-gifs-sect");
 let trends = document.getElementById("trending-sect")
 
-// let gifCard = document.getElementsByClassName("gif-card");
+
 
 
 //evento onclick
@@ -36,7 +36,7 @@ home.addEventListener("click", ()=>
 }
 );
 
-favoritos.addEventListener("click", ()=> 
+favoritosBtn.addEventListener("click", ()=> 
 {
     secBusqueda.style.display = "none";
     secFavoritos.style.display = "block";
@@ -76,18 +76,94 @@ misGifos.addEventListener("click", ()=>
 }
 );
 
-// output.addEventListener("click", (e)=>
-// {
-//   gifCard.style.display = "block";
-// }
-// );
 
-//slides
+// eventos mouseOver
 
-// new Splide( '.splide' ).mount();
+//gifcard
 
-// var elms = document.getElementsByClassName( 'splide' );
-// for ( var i = 0, len = elms.length; i < len; i++ ) {
-// 	new Splide( elms[ i ] ).mount();
-// }
+    //zoom , download, heart
 
+    
+    
+    
+    
+    
+    
+    // window.onload = function(){
+        //     let zoom = document.getElementById("zoom");
+        //     let download = document.getElementById("download");
+        //     let heart = document.getElementById("heart");
+        
+        //     heart.addEventListener("click", favoritos)
+        //     heart.addEventListener("click", ()=>
+        //     {
+            //         console.log("funciona")
+            //     })
+            // }
+            
+            // let zoom = document.getElementById("zoom");
+            // let download = document.getElementById("download");
+            // let heart = document.querySelector(".gif-icons #heart");
+            
+    //     document.addEventListener('DOMContentLoaded', function () {
+    //         console.log(heart)
+    //         let imgCatch = document.getElementsByTagName("img");
+        
+    //         console.log(imgCatch.namedItem)
+            
+    //         heart.addEventListener("click", favoritos)
+    // });
+    
+    
+    // function favoritos(element){
+    //     //let heart = document.querySelector(".gif-icons #heart");
+    //     console.log(element)
+    //     console.log("funciona?")
+        
+
+    // }
+    // function maximizar(){
+    //     console.log("maximiza?")
+    //     let max = document.querySelector(".gif-icons #zoom");
+    //     console.log(max)
+        
+    // }
+    //  async function descargar(){
+    //     // console.log("descarga?")
+    //     let imgCatch = document.querySelector("#download img");
+        
+    //     console.log(imgCatch)
+        
+    // }
+    // const downloadGif = async (url, title) => {
+    //     let blob = await fetch(url).then((img) => img.blob());
+    //     invokeSaveAsDialog(blob, title + '.gif');
+    // };
+
+
+
+
+
+
+    //gif para para propagacion
+
+  
+    
+
+    // Array.from(NodeList, stopGif =>
+                    
+    //     stopGif.addEventListener("mouseover", ()=>{
+
+    //         let limit = 48
+
+    //         for(let i = 0; i<=limit; i++){
+
+    //             let stopGif = document.querySelector(`.gif-${i} img`).getAttribute('src');
+    //             stopGif.stopPropagation("img");
+    //         }
+
+
+
+    // })
+
+    // );
