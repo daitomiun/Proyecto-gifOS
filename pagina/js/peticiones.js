@@ -12,19 +12,12 @@
     async function callApi(){
         var uInput= document.getElementById("search").value;
         var apiKey = "VZ4N6ebz6BSdgrhUNiKAAU0dNYws5GSn";
-        //0m6p9UIK0QqEfA8GmlLnGoKcW873s8Ld
+    
         const elFetch =await fetch(`https://api.giphy.com/v1/gifs/search/tags?q=${uInput}&api_key=${apiKey}&limit=1`);
         // const elFecth = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apikey}&limit=${limit}`);
         laData =await  elFetch.json();
         console.log(laData);
 
-        // var empty = document.getElementById("empty-search");
-
-
-        // if (uInput === "" || uInput == null) {
-        //     empty.style.display = "block" 
-        //     delete gifCall;
-        // }
 
         
         
@@ -58,7 +51,7 @@
 
     }
 
-    //&& ((insert[insert.lenght -1]) != (insert[insert.lenght -2]) ) 
+     
 
     //quitar gifs
 
@@ -79,14 +72,12 @@
         
 
         requested.appendChild(createElement)
-        //requested.appendChild(createMore)
-        
-        // let deleteGif = document.querySelector("#delete");
-        // for(let i= 12; i>0; i--){
-        //     console.log(`quitando gif: ${i}`);
-        //     document.getElementById("written-recomend").removeChild(deleteGif);
-           
-        // }
+
+
+
+        let getMore = document.getElementById("more-button");
+        getMore.style.display = "block";
+     
         
     }
 
@@ -94,6 +85,14 @@
     let button = document.getElementById("btn");
 
     button.addEventListener("click" , capture)
+    button.addEventListener("keyup", function(event) {
+        if (event.key === 13 || event.key == "Enter") {
+         event.preventDefault();
+         capture();
+         //deleteGifs();
+         
+        }
+      });
 
 
 
@@ -108,14 +107,7 @@
         let uInput= document.getElementById("search").value;
         let tRecomend = document.getElementById("trend-recomend")
         console.log(tRecomend)
-        let createReflected = document.createElement("div")
-        createReflected.className = "title-align"
-        createReflected.id = "reflected-input"
-        createReflected.innerHTML = `${uInput}`;
-        console.log("cambio:  "+createReflected);
-        tRecomend.insertBefore(createReflected, requested)   
-        
-        // let reflected = document.getElementsById("reflected-input");
+       
 
         
 
@@ -160,23 +152,8 @@
             `;
         
 
-            // if (counter>1 || uInput === "") {
-            
-            // counter = 0;
-            // delete element;
-            // delete recomend;
-            
-            // break;
-            
-            // }
-            // if (uInput == "" ) {
-            
-            
-            // delete element;
-            // delete recomend;
-            // break;
-            
-            // }
+        
+          
             console.log(dataGif);
             element.style.width = "260px";
             element.style.height = "200px";
@@ -217,31 +194,65 @@
 
                 }, 3000);
        }
-        let createMore = document.createElement("div");
-        createMore.className= "more-button";
-        createMore.id = "more-button";
-        createMore.innerHTML =`<p>buscar mas</p>`;
+       let getMore = document.getElementById("more-button");
+       getMore.style.display = "flex";
+
+
        
-        requested.appendChild(createMore)
+       
+       let createReflected = document.createElement("div")
+       createReflected.className = "title-align"
+       createReflected.id = "reflected-input"
+       createReflected.innerHTML = `<p>${uInput}</p>`;
+        // console.log("cambio:  "+createReflected);
+       tRecomend.insertBefore(createReflected, requested)  
+       
+       
+       // let createMore = document.createElement("div");
+       // createMore.className= "more-button";
+       // createMore.id = "more-button";
+       // createMore.innerHTML =`<p>buscar mas</p>`;
+       
+        // requested.appendChild(createMore)
     }
     
     async function recomendations(){
         let apiKey = "VZ4N6ebz6BSdgrhUNiKAAU0dNYws5GSn";
         let uInput= document.getElementById("search").value;
-        // let prueba = "hola"
         
+        //llamar a los estilos
+        let change = document.getElementById("search-bar");
+        let suggest = document.querySelector(".suggest");
+        let show = document.querySelector(".suggest .suggest-text .show");
+        console.log(show)
+
         if(uInput == null || uInput.length == 0){
             console.log("no hay nada")
+            change.style.height = "50px";
+            suggest.style.display = "none"
             return false;
+
         }else{
             
             console.log("se esta cambiando algo")
             const fetchSugest =await fetch(`https://api.giphy.com/v1/gifs/search/tags?q=${uInput}?&api_key=${apiKey}`);
             let laData =await  fetchSugest.json();
-    
-            // console.log(fetchSugest);
+            change.style.height = "18rem";
+            suggest.style.display = "block";
+            //let appendSearch = document.getElementById("search-bar")
             
-            console.log( laData);
+          
+            
+            for (let i = 0; i < 5; i++) {
+                
+                let show = document.querySelector(`.suggest .suggest-text .show-${i}`);
+                show.innerHTML = `${laData.data[i].name}`
+                console.log( laData.data[i].name);
+                
+   
+            }
+            
+            
         }
         
     
@@ -356,7 +367,7 @@
     function favoritos(){
         //let heart = document.querySelector(".gif-icons #heart");
         
-        console.log()
+        
         console.log("funciona?")
         
 
@@ -374,6 +385,54 @@
         console.log(imgCatch)
         
      }
+
+     let searchTerm = document.getElementById("search");
+    
+     searchTerm.addEventListener("keyup", function(event) {
+        if (event.key === 13 || event.key == "Enter") {
+         event.preventDefault();
+         gifCall();
+         //deleteGifs();
+         
+        }
+      });
+
+
+      //seguerencias texto
+
+      let elementosPsuggest = document.querySelectorAll(".suggest .suggest-text p");
+      
+    elementosPsuggest.forEach(p=>{
+       
+     
+        p.onclick = function(){
+            document.getElementsByTagName("p").value = this.innerHTML;
+             //document.getElementsByTagName("p")[5].alt = this.alt;
+			document.getElementById("search").value = this.innerHTML; 
+
+            console.log(this.innerHTML)
+            
+        }
+     
+    }) 
+
+
+      let elementosP = document.querySelectorAll("#suggest #suggest-text p");
+
+  
+    elementosP.forEach(p=>{
+       
+     
+        p.onclick = function(){
+            document.getElementsByTagName("p").value = this.innerHTML;
+             //document.getElementsByTagName("p")[5].alt = this.alt;
+			document.getElementById("search").value = this.innerHTML; 
+
+            console.log(this.innerHTML)
+            
+        }
+     
+    }) 
 
 
       

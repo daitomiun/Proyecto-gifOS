@@ -13,6 +13,7 @@
     <title>gifOS</title>
 </head>
 <body>
+    
     <header class="header">                                                                                         
         <div class="up-line"></div>
         <div class="logo">
@@ -63,19 +64,60 @@
                 <div class="img-bar">
                     <img src="assets/ilustra_header.svg" alt=""  class="img-bar">
                 </div>
-                <div class="search-bar">
-                    <input type="search" class="s-bar s-text" id="search" placeholder="Buca gifos y mas" autocomplete="off" onclick="recomendations()">
-                    <button class="search-button" type="submit" id="btn" onclick="gifCall()"> 
-                        <i class='fas fa-search'></i>
-                    </button>
+                <!-- <form action="" onsubmit="return false">
+                </form> -->
+                <div class="search-bar" id="search-bar">
+                    <div class="bar-box">
+                        <input type="search" class="s-bar s-text" id="search" placeholder="Busca gifos y mas" autocomplete="off" oninput="recomendations()">
+                        <button class="search-button" type="submit" id="btn" onclick="gifCall()"> 
+                            <i class='fas fa-search'></i>
+                        </button>                        
+                    </div>
+                    <div class="suggest">
+                        <div class="suggest-text" >
+                            <p class="show-0"></p>
+                        </div>
+                        <div class="suggest-text" >
+                            <p class="show-1"></p>
+                        </div>
+                        <div class="suggest-text" >
+                            <p class="show-2"></p>
+                        </div>
+                        <div class="suggest-text" >
+                            <p class="show-3"></p>
+                        </div>
+                        <div class="suggest-text" >
+                            <p class="show-4"></p>
+                        </div>
+                    </div>
                 </div>     
             </div>
             <div class="box search-box trend-recommend" id="trend-recomend">
                 <h5>Trending:</h5>
-                <p class="title-align API-call-trends">
+                <div id="suggest">
+                    <div  id="suggest-text">
+                        <p class="show-0">reactions</p>
+                    </div>
+                    <div  id="suggest-text">
+                        <p class="show-1">entertaiment </p>
+                        
+                    </div>
+                    
+                    <br class="repair-br">
+                    <div id="suggest-text">
+                        <p class="show-2">sports</p>
+                    </div>
+                    <div  id="suggest-text">
+                        <p class="show-3">stickers</p>
+                    </div>
+                    <div   id="suggest-text" ">
+                        <p class="show-4">artists</p>
+                    </div>
+                </div>
+                <!-- <p class="title-align API-call-trends">
                     reactions, entertainment, <br class="repair-br">
                     Sports, stickers, artists
-                </p>
+                </p> -->
                 <h3 class="title-align reflected-input"></h3> <!-- copiara lo que el usuario escoga, no lo que escriba -->
                 <div class="show-requested" id="show-requested">
                     <div class="written-recomend" id="written-recomend">
@@ -103,9 +145,9 @@
                         </div>
                     </div> -->
                     </div>
-                    <!-- <div class="more-button">
-                    <p>buscar mas</p>
-                </div> -->
+                    <div id="more-button">
+                        <p style="font-size: 1rem;">buscar mas</p>
+                    </div>
                 </div>
                 <div class="empty-search title-align " id="empty-search">
                     <div class="img-empty">

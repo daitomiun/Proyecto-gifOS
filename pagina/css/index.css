@@ -211,10 +211,11 @@
   width: 273px;
   height: 130px;
 }
-.container .box .search-bar {
+.container .box #search-bar {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: revert;
   margin-top: 29px;
   border-radius: 27px;
   border: 1px solid #572EE5;
@@ -223,7 +224,26 @@
   min-width: 290px;
   max-width: 550px;
 }
-.container .box .search-bar .search-button {
+.container .box #search-bar .bar-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: 6px;
+}
+.container .box #search-bar .suggest {
+  width: 95%;
+  height: 10rem;
+  border-top: 3px #572EE5 solid;
+  margin: 0.5rem;
+  padding-top: 1rem;
+}
+.container .box #search-bar .suggest .suggest-text {
+  margin-top: 0.4rem;
+  padding-top: 0.1rem;
+  height: 2rem;
+}
+.container .box #search-bar .search-button {
   width: 35px;
   height: 35px;
   font-size: 20px;
@@ -232,11 +252,11 @@
   background: transparent;
   margin-right: 10px;
 }
-.container .box .search-bar .s-bar {
+.container .box #search-bar .s-bar {
   border: 0;
   font-family: "roboto", sans-serif;
 }
-.container .box .search-bar .s-bar.s-text {
+.container .box #search-bar .s-bar.s-text {
   position: relative;
   color: grey;
   background: transparent;
@@ -251,10 +271,29 @@
 .container .box.trend-recommend {
   margin-top: 44px;
 }
+.container .box.trend-recommend #suggest {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 22rem;
+  height: 10rem;
+  margin: 0.5rem;
+  padding-top: 1rem;
+}
+.container .box.trend-recommend #suggest #suggest-text {
+  margin-top: 0.4rem;
+  padding: 0.2rem;
+  height: 2rem;
+}
+.container .box.trend-recommend #suggest #suggest-text p {
+  margin: 0;
+  font-size: 1rem;
+}
 .container .box.trend-recommend p {
   margin-top: 5px;
   margin-bottom: 44px;
-  font-size: 14px;
+  font-size: 2rem;
 }
 .container .box.trend-recommend .written-recomend {
   width: 100%;
@@ -269,8 +308,8 @@
 .container .box.trend-recommend .show-requested {
   display: contents;
 }
-.container .box.trend-recommend .show-requested .more-button {
-  display: flex;
+.container .box.trend-recommend .show-requested #more-button {
+  display: none;
   justify-content: center;
   align-items: center;
   width: 130px;
@@ -280,7 +319,7 @@
   margin-top: 20px;
   padding-top: 2rem;
 }
-.container .box.trend-recommend .show-requested .more-button:hover {
+.container .box.trend-recommend .show-requested #more-button:hover {
   background-color: #572EE5;
   color: #fff;
 }
@@ -481,10 +520,10 @@
   margin-bottom: 26px;
 }
 
-.oscuro .search-sect .container .show-requested .more-button {
+.oscuro .search-sect .container .show-requested #more-button {
   border: #fff 1px solid;
 }
-.oscuro .search-sect .container .show-requested .more-button:hover {
+.oscuro .search-sect .container .show-requested #more-button:hover {
   background-color: #fff;
   color: #37383C;
 }
@@ -521,14 +560,14 @@
 .oscuro .search-sect.bg-w-b .black-typo, .oscuro .trending-sect.bg-w-b .black-typo, .oscuro .favorites-sect.bg-w-b .black-typo, .oscuro .my-gifs-sect.bg-w-b .black-typo, .oscuro .create-gif-sect.bg-w-b .black-typo, .oscuro .zoom-out-gif-sect.bg-w-b .black-typo, .oscuro footer.bg-w-b .black-typo {
   color: #fff;
 }
-.oscuro .box .search-bar {
+.oscuro .box #search-bar {
   border: 1px solid #fff;
 }
-.oscuro .box .search-bar .search-button {
+.oscuro .box #search-bar .search-button {
   display: block;
   color: #fff;
 }
-.oscuro .box .search-bar .s-text {
+.oscuro .box #search-bar .s-text {
   background-color: #37383C;
   color: grey;
   font-size: 16px;
