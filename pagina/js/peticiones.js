@@ -60,6 +60,8 @@
         let requested = document.getElementById("show-requested")
         let quitAllWrittenText = document.getElementById( "reflected-input")
         let recomend = document.getElementById("written-recomend");
+        let getMore = document.getElementById("more-button");
+    
         //let quitAllMore = document.getElementById("more-button");
 
         requested.parentNode.removeChild(quitAllWrittenText);
@@ -71,11 +73,10 @@
         createElement.id = "written-recomend";
         
 
-        requested.appendChild(createElement)
+        requested.insertBefore(createElement, getMore)
 
 
 
-        let getMore = document.getElementById("more-button");
         getMore.style.display = "block";
      
         
@@ -106,7 +107,7 @@
         let apiKey = "VZ4N6ebz6BSdgrhUNiKAAU0dNYws5GSn";
         let uInput= document.getElementById("search").value;
         let tRecomend = document.getElementById("trend-recomend")
-        console.log(tRecomend)
+        //console.log(tRecomend)
        
 
         
@@ -132,7 +133,7 @@
             element.id = "delete";
   
             element.innerHTML = `
-            <div id="gif-${i}" class="download"></div>
+            <div id="gif-${i}" class="heart" ></div>
             <div class="gif-box" style="width: 260px; height: 200px;">
                 <div class="gif-icons">
                     <div class="icon-box" id="zoom" onclick="maximizar()">
@@ -167,7 +168,7 @@
             container.style.display = "block";
         
             // console.log(dataGif);
-            console.log(dataGif.data[i].images.fixed_height.url);
+            //console.log(dataGif.data[i].images.fixed_height.url);
             let imgPath = dataGif.data[i].images.fixed_width.url;
 
         
@@ -182,7 +183,7 @@
             container.appendChild(gif);
 
             trendData.push(dataGif.data[i].images.fixed_height.url)
-                console.log("data gif  "+  trendData[i])
+                //console.log("data gif  "+  trendData[i])
 
                 
                 setTimeout(() => {
@@ -190,12 +191,13 @@
                     console.log("==================================================")
                     console.log("data gifSearch  "+  trendData[i])
                 
-                    console.log(trendData)
+                    //console.log(trendData)
 
                 }, 3000);
        }
        let getMore = document.getElementById("more-button");
        getMore.style.display = "flex";
+      
 
 
        
@@ -208,12 +210,13 @@
        tRecomend.insertBefore(createReflected, requested)  
        
        
-       // let createMore = document.createElement("div");
-       // createMore.className= "more-button";
-       // createMore.id = "more-button";
-       // createMore.innerHTML =`<p>buscar mas</p>`;
-       
-        // requested.appendChild(createMore)
+    //    let createMore = document.createElement("div");
+    //    createMore.className= "more-button";
+    //    createMore.id = "more-button";
+    //    createMore.innerHTML =`<p style="font-size: 1rem;" >buscar mas</p>`;
+    //    requested.appendChild(createMore)
+    //    createMore.after(recomend)
+    //    createMore.style.display = "flex";
     }
     
     async function recomendations(){
@@ -247,7 +250,7 @@
                 
                 let show = document.querySelector(`.suggest .suggest-text .show-${i}`);
                 show.innerHTML = `${laData.data[i].name}`
-                console.log( laData.data[i].name);
+                //console.log( laData.data[i].name);
                 
    
             }
@@ -288,7 +291,7 @@
           
                 element.innerHTML = `
                
-                <div id="gif-${i}" class="download"></div>
+                <div id="gif-${i}" class="heart"></div>
                         <div class="gif-box ">
                             <div class="gif-icons">
                                 <div class="icon-box" id="zoom" onclick="maximizar()">
@@ -318,8 +321,8 @@
                 container.style.position = "absolute";
                 container.style.display = "block";
               
-                console.log(dataGif);
-                console.log(dataGif.data[i].images.fixed_height.url);
+                //console.log(dataGif);
+                //console.log(dataGif.data[i].images.fixed_height.url);
                 let imgPath = dataGif.data[i].images.fixed_width.url;
 
         
@@ -335,14 +338,14 @@
                 container.appendChild(gif);
                 
                 trendData.push(dataGif.data[i].images.fixed_height.url)
-                console.log("data gif  "+  trendData[i])
+                //console.log("data gif  "+  trendData[i])
 
                 setTimeout(() => {
                     console.log("==================================================")
                     console.log("==================================================")
-                    console.log("data gif  "+  trendData[i])
+                    //console.log("data gif  "+  trendData[i])
                 
-                    console.log(trendData)
+                    //console.log(trendData)
 
                 }, 3000);
              //     trendData.forEach(dataGif => {
@@ -364,14 +367,21 @@
       
    
   
-    function favoritos(){
+    async function favoritos(){
         //let heart = document.querySelector(".gif-icons #heart");
-        
-        
-        console.log("funciona?")
-        
+        //let fav = document.querySelector(".gif-card div img").attributes.src.value;
+        let fav = document.querySelectorAll(".gif-card div img")
 
+        for (let i = 0; i < fav.length; i++) {
+            const element = fav[i].attributes.src.value;
+            console.log(element)
+            
+        }
+        console.log(fav)
+        
+    
     }
+
     function maximizar(){
         console.log("maximiza?")
         let max = document.querySelector(".gif-icons #zoom");
@@ -404,13 +414,14 @@
       
     elementosPsuggest.forEach(p=>{
        
+
      
         p.onclick = function(){
             document.getElementsByTagName("p").value = this.innerHTML;
              //document.getElementsByTagName("p")[5].alt = this.alt;
 			document.getElementById("search").value = this.innerHTML; 
 
-            console.log(this.innerHTML)
+            //console.log(this.innerHTML)
             
         }
      
@@ -428,7 +439,7 @@
              //document.getElementsByTagName("p")[5].alt = this.alt;
 			document.getElementById("search").value = this.innerHTML; 
 
-            console.log(this.innerHTML)
+            //console.log(this.innerHTML)
             
         }
      
