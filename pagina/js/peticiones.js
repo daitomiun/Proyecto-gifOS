@@ -108,12 +108,6 @@
         let uInput= document.getElementById("search").value;
         let tRecomend = document.getElementById("trend-recomend")
         //console.log(tRecomend)
-       
-
-        
-
-    
-               
         
         let maxLimit = 48
         let limit = 12;
@@ -124,7 +118,7 @@
         let recomend = document.getElementsByClassName("written-recomend");
         // tRecomend.appendChild(createReflected)
         
-        for (let i = 1; i<=limit; i++){
+        for (let i = 1; i<maxLimit; i++){
          
             var element = document.createElement("div");
         
@@ -152,10 +146,29 @@
             </div>
             `;
         
-
+            // element.innerHTML = `
+            // <div id="gif-${i}" ></div>
+            // <div class="gif-box" style="width: 260px; height: 200px;">
+            //     <div class="gif-icons">
+            //         <div class="icon-box" id="zoom" onclick="maximizar()">
+            //             <i class='fas fa-search-plus'></i>
+            //         </div>
+            //         <div class="icon-box " id="download" onclick="descargar()">
+            //             <i class="fas fa-download"></i>
+            //         </div>
+            //         <div class="icon-box heart" id="fav" >
+            //             <i class="far fa-heart"></i>
+            //         </div>
+            //     </div>
+            //     <div class="adaptive-text">
+            //         <P class="gif-title"></P>
+            //     </div>
+            // </div>
+            // `;
+        
         
           
-            console.log(dataGif);
+            // console.log(dataGif);
             element.style.width = "260px";
             element.style.height = "200px";
             recomend[0].appendChild(element)[0];
@@ -175,7 +188,7 @@
         
         
             let gif = document.createElement("img");
-            gif.id = "hearting max-out download"
+            gif.id = `hearting-${i} download-${i}`
             gif.setAttribute("src", imgPath);
             gif.style.width = "260px";
             gif.style.height = "200px";
@@ -186,14 +199,14 @@
                 //console.log("data gif  "+  trendData[i])
 
                 
-                setTimeout(() => {
-                    console.log("==================================================")
-                    console.log("==================================================")
-                    console.log("data gifSearch  "+  trendData[i])
+                // setTimeout(() => {
+                //     console.log("==================================================")
+                //     console.log("==================================================")
+                //     console.log("data gifSearch  "+  trendData[i])
                 
-                    //console.log(trendData)
+                //     //console.log(trendData)
 
-                }, 3000);
+                // }, 3000);
        }
        let getMore = document.getElementById("more-button");
        getMore.style.display = "flex";
@@ -289,27 +302,45 @@
                 
                 element.className = "gif-card"+" trends";
           
-                element.innerHTML = `
+                // element.innerHTML = `
                
-                <div id="gif-${i}" class="heart"></div>
-                        <div class="gif-box ">
-                            <div class="gif-icons">
-                                <div class="icon-box" id="zoom" onclick="maximizar()">
-                                    <i class='fas fa-search-plus'></i>
-                                </div>
-                                <div class="icon-box" id="download" onclick="descargar()">
-                                    <i class="fas fa-download"></i>
-                                </div>
-                                <div class="icon-box" id="heart" onclick="favoritos()">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                            <div class="adaptive-text">
-                                <P class="gif-title">Nombre gifos</P>
-                            </div>
+                // <div id="gif-${i}" ></div>
+                //         <div class="gif-box ">
+                //             <div class="gif-icons">
+                //                 <div class="icon-box" id="zoom" onclick="maximizar()">
+                //                     <i class='fas fa-search-plus'></i>
+                //                 </div>
+                //                 <div class="icon-box" id="download" onclick="descargar()">
+                //                     <i class="fas fa-download"></i>
+                //                 </div>
+                //                 <div class="icon-box" id="fav">
+                //                     <i class="far fa-heart"></i>
+                //                 </div>
+                //             </div>
+                //             <div class="adaptive-text">
+                //                 <P class="gif-title">Nombre gifos</P>
+                //             </div>
+                //         </div>
+                // `;
+                element.innerHTML = `
+                <div id="gif-${i}" class="heart" ></div>
+                <div class="gif-box" >
+                    <div class="gif-icons">
+                        <div class="icon-box" id="zoom" onclick="maximizar()">
+                            <i class='fas fa-search-plus'></i>
                         </div>
+                        <div class="icon-box " id="download" onclick="descargar()">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="icon-box heart" id="heart" onclick="favoritos()">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="adaptive-text">
+                        <P class="gif-title"></P>
+                    </div>
+                </div>
                 `;
-                
                
                 element.style.width = "360px";
                 element.style.height = "275px";
@@ -329,7 +360,7 @@
                 
                 
                 let gif = document.createElement("img");
-                gif.id = "hearting max-out download";
+                gif.id = `hearting download`;
                 
                 gif.setAttribute("src", imgPath);
                 gif.style.width = "360px";
@@ -362,25 +393,91 @@
     trending();
              
 
-      
+     //window.onload= addEventListener; 
+    //   let favButton = document.getElementById("fav")
+    //   console.log
 
+    //   favButton.addEventListener('click', favoritos())
       
-   
-  
-    async function favoritos(){
+    //   function favoritos(){
+    //       let heart = document.querySelector(".gif-icons #heart");
+    //       let fav = document.querySelector(".gif-card div img").attributes.src.value;
+    //       let fav = document.querySelector(".gif-card div img");
+    //       for (let i = 0; i < fav.length; i++) {
+              
+    //           const element = fav[i].attributes.src.value;
+    //           console.log(element)
+    //           const gifId = document.getElementById(`hearting`) 
+    //           console.log(gifId)
+    //           console.log(fav)
+    //       }
+          
+          
+    //       const element = fav[i].attributes.src.value;
+    //       console.log(element)
+    //       const gifId = document.getElementById(`hearting`) 
+    //       console.log(gifId)
+    //       console.log(fav)
+    //     console.log("hola")
+          
+          
+    //   }
+      function favoritos(){
         //let heart = document.querySelector(".gif-icons #heart");
         //let fav = document.querySelector(".gif-card div img").attributes.src.value;
-        let fav = document.querySelectorAll(".gif-card div img")
+        let fav = document.querySelectorAll(".gif-card div img");
+        // console.log(fav)
 
         for (let i = 0; i < fav.length; i++) {
+            
             const element = fav[i].attributes.src.value;
             console.log(element)
-            
+            const gifId = document.getElementById(`hearting`) 
+            console.log(gifId)
+            console.log(fav)
         }
-        console.log(fav)
-        
-    
+
     }
+        
+    //     const element = fav[i].attributes.src.value;
+    //     console.log(element)
+    //     const gifId = document.getElementById(`hearting`) 
+    //     console.log(gifId)
+    //     console.log(fav)
+    //   console.log("hola")
+        
+    // favButton.addEventListener("click", ()=>
+    // {
+    //    console.log("hola")
+
+    // })
+
+//    let fav = document.querySelectorAll(".gif-card #heart img");
+
+//    fav.forEach(f=>{
+   
+
+ 
+//     f.onclick = function(){
+
+//         let prueba = document.getElementsByTagName("img").value;
+
+//         console.log(prueba)
+//            document.getElementsByTagName("p").value = this.innerHTML;
+//             document.getElementsByTagName("p")[5].alt = this.alt;
+//            document.getElementById("search").value = this.innerHTML; 
+
+//            console.log(this.innerHTML)
+        
+//     }
+ 
+//    }) 
+    
+
+    // fav.forEach(favoritos)
+  
+
+
 
     function maximizar(){
         console.log("maximiza?")
