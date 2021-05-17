@@ -118,7 +118,7 @@
         let recomend = document.getElementsByClassName("written-recomend");
         // tRecomend.appendChild(createReflected)
         
-        for (let i = 1; i<maxLimit; i++){
+        for (let i = 0; i<maxLimit; i++){
          
             var element = document.createElement("div");
         
@@ -136,7 +136,7 @@
                     <div class="icon-box " id="download" onclick="descargar()">
                         <i class="fas fa-download"></i>
                     </div>
-                    <div class="icon-box heart" id="heart" onclick="favoritos()">
+                    <div class="icon-box heart" id="heart" onclick="console.log(${i})">
                         <i class="far fa-heart"></i>
                     </div>
                 </div>
@@ -196,7 +196,7 @@
             container.appendChild(gif);
 
             trendData.push(dataGif.data[i].images.fixed_height.url)
-                //console.log("data gif  "+  trendData[i])
+                console.log("data gif  "+  trendData[i])
 
                 
                 // setTimeout(() => {
@@ -332,7 +332,7 @@
                         <div class="icon-box " id="download" onclick="descargar()">
                             <i class="fas fa-download"></i>
                         </div>
-                        <div class="icon-box heart" id="heart" onclick="favoritos()">
+                        <div class="icon-box heart" id="heart" onclick="console.log(${i})">
                             <i class="far fa-heart"></i>
                         </div>
                     </div>
