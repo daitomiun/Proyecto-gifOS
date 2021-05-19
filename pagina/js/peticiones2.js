@@ -222,11 +222,61 @@ button.addEventListener("keyup", function(event) {
         console.log(heartButton);
     
         for (let i = 0; i < heartButton.length; i++) {
-
+            
             heartButton[i].addEventListener('click',()=>{
-            let gifid= heartButton[i].nextElementSibling.innerText
-            console.log('you pressed fav', gifid)})
+                
+                let epmty = document.getElementById("empty")
+                let myGifs= document.getElementsByClassName("favorites")
+                let favElement = document.createElement("div");
+                favElement.className = "gif-card fav-state";
+                favElement.innerHTML = `
+                             <div id="gif-id-${i}" ></div>
+                            <div class="gif-box">
+                                <div class="gif-icons">
+                                    <div class="icon-box zoom">
+                                        <i class='fas fa-search-plus'></i>
+                                    </div>
+                                    <div class="icon-box downloadButton">
+                                        <i class="fas fa-download"></i>
+                                    </div>
+                                    <div class= "gifid" style="display:none;">${dataGif.data[i].images.fixed_height.url}</div>
+                                    <div class="icon-box garbage">
+                                        <i class="fa fa-trash"></i>
+                                    </div>
+                                </div>
+                                <div class="adaptive-text">
+                                    <P class="gif-name gif-title">Nombre gifos</P>
+                                </div>
+                            </div>
+                
+                `
+                epmty.style.display = "none";
+                favElement.style.width = "260px";
+                favElement.style.height = "200px";
+                myGifs[0].appendChild(favElement)[0];
+
+                let gifid= heartButton[i].nextElementSibling.innerText
+                localStorage.setItem('favs', gifid)
+                localFav = JSON.stringify(localStorage.getItem('favs'))
+                localFav = localFav.replace(/["']/g, "");
+                let favContainer = document.getElementById(`gif-id-${i}`);
+
+                favContainer.style.width = "260px";
+                favContainer.style.height = "200px";
+                favContainer.style.position = "absolute";
+                favContainer.style.display = "block";
+
+                let favGif = document.createElement("img")
+                favGif.setAttribute("src", localFav);
+                favGif.style.width = "260px";
+                favGif.style.height = "200px";
+                favGif.style.display = "block";
+                favContainer.appendChild(favGif);
+
+
+                console.log('you pressed fav', gifid)})
         }
+        
         for (let i = 0; i < downloadButton.length; i++) {
 
             downloadButton[i].addEventListener('click', async ()=>{
@@ -323,27 +373,7 @@ async function trending(){
             let element = document.createElement("div");
             
             element.className = "gif-card"+" trends";
-      
-            // element.innerHTML = `
-           
-            // <div id="gif-${i}" ></div>
-            //         <div class="gif-box ">
-            //             <div class="gif-icons">
-            //                 <div class="icon-box" id="zoom" onclick="maximizar()">
-            //                     <i class='fas fa-search-plus'></i>
-            //                 </div>
-            //                 <div class="icon-box" id="download" onclick="descargar()">
-            //                     <i class="fas fa-download"></i>
-            //                 </div>
-            //                 <div class="icon-box" id="fav">
-            //                     <i class="far fa-heart"></i>
-            //                 </div>
-            //             </div>
-            //             <div class="adaptive-text">
-            //                 <P class="gif-title">Nombre gifos</P>
-            //             </div>
-            //         </div>
-            // `;
+
             element.innerHTML = `
             <div id="gif-${i}" class="heart" ></div>
             <div class="gif-box" >
@@ -403,8 +433,68 @@ async function trending(){
         for (let i = 0; i < heartButton.length; i++) {
 
             heartButton[i].addEventListener('click',()=>{
-            let gifid= heartButton[i].nextElementSibling.innerText
-            console.log('you pressed fav', gifid)})
+
+                let epmty = document.getElementById("empty")
+                let myGifs= document.getElementsByClassName("favorites")
+                let favElement = document.createElement("div");
+                favElement.className = "gif-card fav-state";
+                favElement.innerHTML = `
+                             <div id="gif-id-${i}" ></div>
+                            <div class="gif-box">
+                                <div class="gif-icons">
+                                    <div class="icon-box zoom">
+                                        <i class='fas fa-search-plus'></i>
+                                    </div>
+                                    <div class="icon-box downloadButton">
+                                        <i class="fas fa-download"></i>
+                                    </div>
+                                    <div class= "gifid" style="display:none;">${dataGif.data[i].images.fixed_height.url}</div>
+                                    <div class="icon-box garbage">
+                                        <i class="fa fa-trash"></i>
+                                    </div>
+                                </div>
+                                <div class="adaptive-text">
+                                    <P class="gif-name gif-title">Nombre gifos</P>
+                                </div>
+                            </div>
+                
+                `
+                epmty.style.display = "none";
+                favElement.style.width = "260px";
+                favElement.style.height = "200px";
+                myGifs[0].appendChild(favElement)[0];
+
+                var localFav 
+                let gifid= heartButton[i].nextElementSibling.innerText
+                localStorage.setItem('favs', gifid)
+                localFav = JSON.stringify(localStorage.getItem('favs'))
+                localFav = localFav.replace(/["']/g, "");
+                let favContainer = document.getElementById(`gif-id-${i}`);
+
+                favContainer.style.width = "260px";
+                favContainer.style.height = "200px";
+                favContainer.style.position = "absolute";
+                favContainer.style.display = "block";
+
+                let favGif = document.createElement("img")
+                favGif.setAttribute("src", localFav);
+                favGif.style.width = "260px";
+                favGif.style.height = "200px";
+                favGif.style.display = "block";
+                favContainer.appendChild(favGif);
+                !function initlocalstorage(){
+                    if (JSON.stringify(localStorage.getItem('favs'))) {
+                        localFav = JSON.stringify(localStorage.getItem('favs'))
+                        
+                        console.log("la lista de "+ localFav)
+                    }else{
+                        console.log("nada")
+                        favlist = []
+                    }
+                }()
+                console.log('you pressed fav', localFav)
+            })
+                
         }
         for (let i = 0; i < downloadButton.length; i++) {
 
