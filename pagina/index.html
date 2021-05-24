@@ -39,7 +39,8 @@
                 </div>
                 <div  id="modo" class="links"><a  href="#">modo nocturno</a></div>
                 <div class="links" id="mis-gifos"><a  href="#">mis gifos</a></div>
-                <div class="links" id="favoritos"><a  href="#">favoritos</a></div>
+                <!-- <div class="links" id="favoritos" onclick="captureFav()"><a  href="#">favoritos</a></div> -->
+                <div class="links" id="favoritos" onclick="captureFav()"><a  href="#">favoritos</a></div>
                 <div class="button-min links" id="crear-gifos"><a href="#">crea gifOS</a></div>
             </div>
         </div>
@@ -115,36 +116,9 @@
                         <p class="show-4">artists</p>
                     </div>
                 </div>
-                <!-- <p class="title-align API-call-trends">
-                    reactions, entertainment, <br class="repair-br">
-                    Sports, stickers, artists
-                </p> -->
                 <h3 class="title-align reflected-input"></h3> <!-- copiara lo que el usuario escoga, no lo que escriba -->
                 <div class="show-requested" id="show-requested">
                     <div class="written-recomend" id="written-recomend">
-                    
-                        <!-- <div class="gif-card recomended">
-                        <div id="gif-1"></div>
-                        <div class="gif-box">
-                            <div class="gif-icons">
-                                <div class="icon-box heart">
-                                    <button type="submit" class="heart">
-
-                                    </button>
-                                    <i class='fas fa-search-plus'></i>
-                                </div>
-                                <div class="icon-box download">
-                                    <i class="fas fa-download"></i>
-                                </div>
-                                <div class="icon-box zoom">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                            <div class="adaptive-text">
-                                <P class="gif-title">Nombre gifos</P>
-                            </div>
-                        </div>
-                    </div> -->
                     </div>
                     <div id="more-button">
                         <p style="font-size: 1rem;">buscar mas</p>
@@ -168,27 +142,6 @@
                 <img src="assets/icon-favoritos.svg" alt="">
                 <h2 >Favoritos</h2>
                 <div class="favorites">
-                    <!-- <div class="gif-card fav-state">
-                        <div class="gif-box">
-                            <div class="gif-icons">
-                                <div class="icon-box zoom">
-                                    <i class='fas fa-search-plus'></i>
-                                </div>
-                                <div class="icon-box download">
-                                    <i class="fas fa-download" ></i>
-                                </div>
-                                <div class="icon-box heart">
-                                    <a class="far fa-heart" target="_blank"></a>
-                                </div>
-                                <div class="icon-box garbage">
-                                    <i class="fa fa-trash"></i>
-                                </div>
-                            </div>
-                            <div class="adaptive-text">
-                                <P class="gif-name gif-title">Nombre gifos</P>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
                 <div class="empty" id="empty">
                     <div class="img-empty">
@@ -274,34 +227,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="roll">
-                    <img src="" alt="" >
-                    <img src="" alt="" >
-                </div> -->
             </div>
         </div>
     </section>
-    <!-- <section class="zoom-out-gif-sect bg-w-g" id="zoom-out-gif-sect">
-       <div class="container">
-           <div class="box">
-               <div class="zoom-out">
-                <div class="gif-card fav-state">
-                    <div class="gif-icons">
-                        <div class="icon-box download">
-                            <a class="fas fa-download" target="_blank"></a>
-                        </div>
-                        <div class="icon-box heart">
-                            <a class="far fa-heart" target="_blank"></a>
-                        </div>
-                    </div>
-                    <div class="adaptive-text">
-                        <P class="gif-name gif-title">Nombre gifos</P>
-                    </div>
-                </div>
-               </div>
-           </div>
-       </div>
-    </section> -->
+
     <section class="trending-sect bg-w-b" id="trending-sect">
         <div class="container">
             <div class="box title-align trending-gifos">
@@ -311,93 +240,12 @@
                     GIFOS de nuestra comunidad.
                 </p>
             </div>
-            <div class="box ">
+            <div class="box " style="padding: 0 1.5rem;">
                 <div class="community">
-                    <!-- <div class="gif-card trends">
-                        <div id="gif-1"></div>
-                        <div class="gif-box ">
-                            <div class="gif-icons">
-                                <div class="icon-box heart">
-                                    <i class='fas fa-search-plus'></i>
-                                </div>
-                                <div class="icon-box download">
-                                    <i class="fas fa-download"></i>
-                                </div>
-                                <div class="icon-box zoom">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                            <div class="adaptive-text">
-                                <P class="gif-title">Nombre gifos</P>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gif-card trends">
-                        <div id="gif-1"></div>
-                        <div class="gif-box ">
-                            <div class="gif-icons">
-                                <div class="icon-box heart">
-                                    <i class='fas fa-search-plus'></i>
-                                </div>
-                                <div class="icon-box download">
-                                    <i class="fas fa-download"></i>
-                                </div>
-                                <div class="icon-box zoom">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                            <div class="adaptive-text">
-                                <P class="gif-title">Nombre gifos</P>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gif-card trends">
-                        <div id="gif-1"></div>
-                        <div class="gif-box ">
-                            <div class="gif-icons">
-                                <div class="icon-box heart">
-                                    <i class='fas fa-search-plus'></i>
-                                </div>
-                                <div class="icon-box download">
-                                    <i class="fas fa-download"></i>
-                                </div>
-                                <div class="icon-box zoom">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </div>
-                            <div class="adaptive-text">
-                                <P class="gif-title">Nombre gifos</P>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="gif-card trends">
-                        <div class="gif-icons">
-                            <div class="icon-box zoom">
-                                <i class='fas fa-search-plus'></i>
-                            </div>
-                            <div class="icon-box download">
-                                <i class="fas fa-download"></i>
-                            </div>
-                            <div class="icon-box heart">
-                                <i class="far fa-heart" ></i>
-                            </div>
-                        </div>
-                        <div class="adaptive-text">
-                            <P class="gif-title trend-text">Nombre gifos</P>
-                        </div>
-                    </div> -->
-                    <!-- <div class="splide">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <li class="splide__slide">Slide 01</li>
-                                <li class="splide__slide">Slide 02</li>
-                                <li class="splide__slide">Slide 03</li>
-                            </ul>
-                        </div>
-                    </div> -->
+                  
+
                 </div>
             </div>
-
         </div>
     </section>
     <footer class="footer bg-w-g">
@@ -417,9 +265,44 @@
             </div>
         </div>
     </footer>
+    <!-- <div class="max-container">
+        <div class="close"></div>
+        <div id="gif-container"></div>
+        <div class="max-box">
+            <div class="icon-box  downloadButton" id="download" " style="width: 50px; height: 32px;">
+                <i class="fas fa-download"></i>
+            </div>
+            <div class="icon-box heart  favbutton" style="width: 50px; height: 32px;">
+                <i class="far fa-heart  "></i>
+            </div>
+            <div class="adaptive-text">
+                
+                <P class="gif-title">uysserfeeyyyyyyyyyysssssssssssssssssssssssssswrwerweyyyyyy</P>
+            </div>
+        </div>
+    </div> -->
+
     <script src="js/modes.js"></script> 
-    <script src="js/peticiones2.js"></script>
+    <script src="js/peticiones3.js"></script>
     <script src="js/events.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script> -->
 </body>
 </html>
+<!-- <div class="maximizedGif" id="maximizedGif"><div class="maximizedGif__container">
+	<div class="close-btn" id="close-max-btn" onclick="closeMaximized()"></div> -->
+
+	<!-- <div class="maxGif_Container">
+		<img class="gifMax" src="https://media2.giphy.com/media/67r0xZ7QKOn1TYza3D/giphy.gif?cid=e55013easptukrygbicsnooetec4ld7ounou28j6aifjigha&amp;rid=giphy.gif&amp;ct=g" alt="Party Dancing GIF by DeRay Davis">
+	</div>
+
+	<div class="gifMaxActions">
+		<div class="gif__info">
+			<p class="gif_user">deraydavis</p>
+			<p class="gif_title">Party Dancing GIF by DeRay Davis</p>
+		</div>
+		<div class="gifMaxActions__btn">
+			<div class="buttonsMax favoriteMax" onclick="addToFav('https://media2.giphy.com/media/67r0xZ7QKOn1TYza3D/giphy.gif?cid=e55013easptukrygbicsnooetec4ld7ounou28j6aifjigha&amp;rid=giphy.gif&amp;ct=g', 'deraydavis', 'Party Dancing GIF by DeRay Davis')"></div>
+			<div class="buttonsMax downloadMax" onclick="downloadGif('https://media2.giphy.com/media/67r0xZ7QKOn1TYza3D/giphy.gif?cid=e55013easptukrygbicsnooetec4ld7ounou28j6aifjigha&amp;rid=giphy.gif&amp;ct=g','Party Dancing GIF by DeRay Davis')"></div>
+			</div>
+	</div></div></div> -->
+

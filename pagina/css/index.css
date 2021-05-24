@@ -397,10 +397,11 @@
 .container .box .community {
   margin-top: 50px;
   margin-bottom: 140px;
-  line-height: 0;
-  display: flex;
-  flex-direction: row;
+  line-height: 2;
+  display: -webkit-box;
   justify-content: center;
+  overflow-x: scroll;
+  overflow-y: visible;
 }
 .container .box .community.trends {
   width: 360px;
@@ -469,6 +470,7 @@
   margin: 0;
   padding: 0 0 5px 10px;
   color: #fff;
+  font-size: 1rem;
 }
 .container .box .gif-card .gif-box .adaptive-text .gif-title.gif-name {
   padding: 25px 0 5px 10px;
@@ -485,16 +487,12 @@
   height: 200px;
 }
 .container .box .gif-card.trends {
-  height: 275px;
-  width: 100%;
-  min-width: 270px;
-  max-width: 360px;
   margin: 15px 15px;
+  width: 360px;
+  height: 275px;
 }
 .container .box .gif-card.trends .gif-box {
-  width: 100%;
-  min-width: 270px;
-  max-width: 360px;
+  width: 360px;
   height: 275px;
 }
 .container .box .gif-card.trends .adaptive-text {
@@ -741,14 +739,6 @@
   .container .box .img-bar {
     width: 390px;
     height: 190px;
-  }
-}
-@media (min-width: 300px) {
-  .trending-sect .container .community .gif-card.trends:nth-of-type(1) {
-    display: none;
-  }
-  .trending-sect .container .community .gif-card.trends:nth-of-type(2) {
-    display: none;
   }
 }
 @media (min-width: 800px) {

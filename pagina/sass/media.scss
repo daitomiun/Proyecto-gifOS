@@ -162,24 +162,24 @@
 
 //gif card 
 
-@media(min-width: 300px){
-    .trending-sect{
-        .container{
-            .community{
-                .gif-card{
-                    &.trends:nth-of-type(1){
-                        display: none;
+// @media(min-width: 300px){
+//     .trending-sect{
+//         .container{
+//             .community{
+//                 .gif-card{
+//                     &.trends:nth-of-type(1){
+//                         display: none;
                         
-                    }
-                    &.trends:nth-of-type(2){
-                        display: none;
+//                     }
+//                     &.trends:nth-of-type(2){
+//                         display: none;
                         
-                    }
-                }
-            }
-        }
-    }
-}
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 @media(min-width: 800px){
     .trending-sect{
         .container{

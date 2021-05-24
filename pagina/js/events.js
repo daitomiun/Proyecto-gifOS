@@ -28,6 +28,14 @@ let trends = document.getElementById("trending-sect")
 
 home.addEventListener("click", ()=> 
 {
+//     let favoritosBtn = document.getElementById("favoritos");
+//     favoritosBtn.setAttribute('style',`
+//     pointer-events: initial;
+//     cursor: default;
+//     text-decoration: none;
+    
+// `)
+    counter = 0;
     secBusqueda.style.display = "block";
     secFavoritos.style.display = "none";
     secCrear.style.display = "none";
@@ -38,16 +46,94 @@ home.addEventListener("click", ()=>
 
 favoritosBtn.addEventListener("click", ()=> 
 {
+    let favoritosBtn = document.getElementById("favoritos");
+    favoritosBtn.setAttribute('style',`
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    
+`)
+
     secBusqueda.style.display = "none";
     secFavoritos.style.display = "block";
     secCrear.style.display = "none";
     secMigif.style.display = "none";
     trends.style.display = "block";
+
+    let llave = localStorage.key('favUrl')
+    const gifInfo = JSON.parse(localStorage.getItem(`${llave}`))
+    console.log(gifInfo)
+    const gifTitle = gifInfo.map(gifInfo => gifInfo.Title);
+    const gifUrl = gifInfo.map(gifInfo => gifInfo.url);
+    const gifname = gifInfo.map(gifInfo => gifInfo.Name); 
+
+    
+    alert("si quieres ver tus otros gifos añadidos recarga la pagina y podras verlos")
+
+    
+    for (let i = 0; i < gifInfo.length; i++) {
+    // const console.log(gifTitle[i])
+    // console.log(gifUrl[i])
+    // console.log(gifname[i])
+
+        console.log(gifTitle[i])
+        console.log(gifUrl[i])
+        console.log(gifname[i])
+
+        let epmty = document.getElementById("empty")
+        let myGifs= document.getElementsByClassName("favorites")
+        let favElement = document.createElement("div");
+        favElement.className = "gif-card fav-state";
+        favElement.innerHTML = `
+                    <div id="gif-id-${i}" ></div>
+                        <div class="gif-box">
+                            <div class="gif-icons">
+                                <div class="icon-box zoom">
+                                    <i class='fas fa-search-plus'></i>
+                                </div>
+                                <div class="icon-box downloadButton">
+                                    <i class="fas fa-download"></i>
+                                </div>
+                                <div class= "gifid" style="display:none;">${gifUrl[i]}</div>
+                                <div class="icon-box garbage">
+                                    <i class="fa fa-trash"></i>
+                                </div>
+                            </div>
+                            <div class="adaptive-text">
+                                <P class="gif-name gif-title">${gifTitle[i]}</P>
+                            </div>
+                        </div>
+        
+        `
+        myGifs[0].appendChild(favElement)[0];
+        epmty.style.display= "none"
+        let favContainer = document.getElementById(`gif-id-${i}`);
+        favContainer.style.width = "260px";
+        favContainer.style.height = "200px";
+        favContainer.style.position = "absolute";
+        favContainer.style.display = "block";
+
+        let favGif = document.createElement("img")
+        favGif.style.width = "260px";
+        favGif.style.height = "200px";
+        favGif.style.display = "block";
+        favGif.setAttribute("src", gifUrl[i]);
+        favContainer.appendChild(favGif);
+
+    }
 }
 );
 
 crearGif.addEventListener("click", ()=> 
 {
+    //     let favoritosBtn = document.getElementById("favoritos");
+    //     favoritosBtn.setAttribute('style',`
+    //     pointer-events: initial;
+    //     cursor: default;
+    //     text-decoration: none;
+        
+    // `)
+    
     secBusqueda.style.display = "none";
     secFavoritos.style.display = "none";
     secCrear.style.display = "block";
@@ -58,6 +144,14 @@ crearGif.addEventListener("click", ()=>
 
 crearGifBtn.addEventListener("click", ()=> 
 {
+    //     let favoritosBtn = document.getElementById("favoritos");
+    //     favoritosBtn.setAttribute('style',`
+    //     pointer-events: initial;
+    //     cursor: default;
+    //     text-decoration: none;
+        
+    // `)
+    
     secBusqueda.style.display = "none";
     secFavoritos.style.display = "none";
     secCrear.style.display = "block";
@@ -68,6 +162,14 @@ crearGifBtn.addEventListener("click", ()=>
 
 misGifos.addEventListener("click", ()=> 
 {
+    //     let favoritosBtn = document.getElementById("favoritos");
+    //     favoritosBtn.setAttribute('style',`
+    //     pointer-events: initial;
+    //     cursor: default;
+    //     text-decoration: none;
+    
+    // `)
+    
     secBusqueda.style.display = "none";
     secFavoritos.style.display = "none";
     secCrear.style.display = "none";
