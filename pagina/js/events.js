@@ -46,13 +46,13 @@ home.addEventListener("click", ()=>
 
 favoritosBtn.addEventListener("click", ()=> 
 {
-    let favoritosBtn = document.getElementById("favoritos");
-    favoritosBtn.setAttribute('style',`
-    pointer-events: none;
-    cursor: default;
-    text-decoration: none;
+//     let favoritosBtn = document.getElementById("favoritos");
+//     favoritosBtn.setAttribute('style',`
+//     pointer-events: none;
+//     cursor: default;
+//     text-decoration: none;
     
-`)
+// `)
 
     secBusqueda.style.display = "none";
     secFavoritos.style.display = "block";
@@ -60,6 +60,15 @@ favoritosBtn.addEventListener("click", ()=>
     secMigif.style.display = "none";
     trends.style.display = "block";
 
+    let epmty = document.getElementById("empty")
+    // let dadFav= document.getElementById("favs")
+    let myGifs= document.getElementsByClassName("favorites")
+    // let createFav = document.createElement("div")
+    // createFav.className = "favorites";
+    // dadFav.parentNode.removeChild(myGifs)
+
+
+    // dadFav.insertBefore(createFav, epmty)
     let llave = localStorage.key('favUrl')
     const gifInfo = JSON.parse(localStorage.getItem(`${llave}`))
     console.log(gifInfo)
@@ -76,21 +85,22 @@ favoritosBtn.addEventListener("click", ()=>
     // console.log(gifUrl[i])
     // console.log(gifname[i])
 
+        
+
         console.log(gifTitle[i])
         console.log(gifUrl[i])
         console.log(gifname[i])
 
-        let epmty = document.getElementById("empty")
-        let myGifs= document.getElementsByClassName("favorites")
         let favElement = document.createElement("div");
         favElement.className = "gif-card fav-state";
         favElement.innerHTML = `
                     <div id="gif-id-${i}" ></div>
                         <div class="gif-box">
                             <div class="gif-icons">
-                                <div class="icon-box zoom">
+                                <div class="icon-box zoomButton">
                                     <i class='fas fa-search-plus'></i>
                                 </div>
+                                <div class= "gifid" style="display:none;">${gifUrl[i]}</div>
                                 <div class="icon-box downloadButton">
                                     <i class="fas fa-download"></i>
                                 </div>
@@ -119,6 +129,26 @@ favoritosBtn.addEventListener("click", ()=>
         favGif.style.display = "block";
         favGif.setAttribute("src", gifUrl[i]);
         favContainer.appendChild(favGif);
+
+        descargar();
+        let zoomButton = document.getElementsByClassName('zoomButton')
+    
+        for (let i = 0; i < zoomButton.length; i++) {
+            // let userName = dataGif.data[i].username
+            // let title = dataGif.data[i].title
+            // let imgPath = dataGif.data[i].images.fixed_width.url;
+            // let objectGif = 
+        
+            // {
+            //     // Name: userName,
+            //     Title: title,
+            //     url: imgPath
+            // };
+            const gifInfo = JSON.parse(localStorage.getItem(`${llave}`))
+            // console.log(gifInfo)
+           
+            zoomButton[i].addEventListener('click',()=> maximizarFav(gifInfo,i))
+        }
 
     }
 }

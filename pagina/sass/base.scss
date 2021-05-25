@@ -1,4 +1,19 @@
 //menu bar
+
+#max{
+    .close{
+        transform: translate(8.75rem, 0px);
+        display: flex;
+        width: 5rem;
+        height: 5rem;
+        /* border: black 2px solid; */
+        justify-content: center;
+        align-items: center;
+        /* text-align: center; */
+        font-size: 1.5rem;
+    }
+}
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -454,7 +469,7 @@
             margin-bottom: 80px;
             flex-wrap: wrap;
             justify-content: center;  
-            line-height: 0;
+            line-height: 2;
         }
 
         //gif-cards
@@ -500,7 +515,7 @@
                     }
                 }
                 .adaptive-text{
-                    padding-top: 90px;
+                    padding-top: 50px;
                     height: 50px;
                     width: 100%;
                     .gif-title{
