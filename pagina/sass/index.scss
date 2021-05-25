@@ -82,3 +82,15 @@
     /* text-align: center; */
     font-size: 1.5rem;
 }
+
+.oscuro{
+    #max-container{
+        background: $dark-mode-color;
+        .adaptive-text{
+            color: $light-mode-color;
+        }
+        .icon-box{
+            color: $light-mode-color;
+        }
+    }
+}

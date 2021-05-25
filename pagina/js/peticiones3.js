@@ -267,11 +267,11 @@ async function gifCall() {
 
     for (let i = 0; i < maxLimit; i++) {
 
-        var element = document.createElement("div");
+        let element = document.createElement("div");
         let userName = dataGif.data[i].username
-        var title = dataGif.data[i].title
-        var imgPath = dataGif.data[i].images.fixed_width.url;
-        var objectGif = 
+        let title = dataGif.data[i].title
+        let imgPath = dataGif.data[i].images.fixed_width.url;
+        let objectGif = 
     
         {
             Name: userName,
@@ -349,6 +349,8 @@ async function gifCall() {
 
         // }, 3000);
     }
+
+
     let getMore = document.getElementById("more-button");
     getMore.style.display = "flex";
 
@@ -362,25 +364,29 @@ async function gifCall() {
     createReflected.innerHTML = `<p>${uInput}</p>`;
     // console.log("cambio:  "+createReflected);
     tRecomend.insertBefore(createReflected, requested)
-    // let title = dataGif.data[i].title
-    // let imgPath = dataGif.data[i].images.fixed_width.url;
-    // let objectGif = 
-
-    // {
-    //     // Name: userName,
-    //     Title: title,
-    //     url: imgPath
-    // };
+    
 
     // maximizar(objectGif);
-    descargar();
+    
     let zoomButton = document.getElementsByClassName('zoomButton')
     
     for (let i = 0; i < zoomButton.length; i++) {
-   
-        objectGif
-        zoomButton[i].addEventListener('click',()=> maximizar(objectGif,i))
+        
+        // let userName = dataGif.data[i].username
+        // var userName = dataGif.data[i].username
+        let title = dataGif.data[i].title
+        let imgPath = dataGif.data[i].images.fixed_width.url;
+        let objectGif = 
+        
+        {
+            // Name: userName,
+            Title: title,
+            url: imgPath
+        };
+        // objectGif[i];
+        zoomButton[i].addEventListener('click',()=> maximizar(objectGif, i))
     }
+    descargar();
     let heartButton = document.getElementsByClassName('favbutton')
     
     for (let i = 0; i < heartButton.length; i++) {
@@ -388,7 +394,7 @@ async function gifCall() {
         let title = dataGif.data[i].title
         let imgPath = dataGif.data[i].images.fixed_width.url;
         let objectGif = 
-    
+        
         {
             Name: userName,
             Title: title,
@@ -396,7 +402,7 @@ async function gifCall() {
         };
         heartButton[i].addEventListener('click',()=> saveFav(objectGif,i))
     }
-
+    
    
 }
 
@@ -532,6 +538,7 @@ var trendData = []
         container.appendChild(gif)
 
         trendData.push(dataGif.data[i].images.fixed_height.url)
+
     }
 
 
@@ -589,7 +596,8 @@ const saveFav = (objectGif,i) => {
 
  
     let allGif= objectGif
-    
+
+    console.log(localFav)
         localFav.push(allGif)
         localStorage.setItem('favUrl',JSON.stringify(localFav))
         const gifInfo = JSON.parse(localStorage.getItem('favUrl')) 
@@ -606,23 +614,14 @@ const saveFav = (objectGif,i) => {
        
         // console.log(gifInfo.Title)
         console.log('%cyou pressed heart','color:green;')
-        // console.log(localFav)
+        console.log(localFav)
         console.log('this is the local ' ,JSON.parse(localStorage.getItem('favUrl')) )
 }
 
 const maximizar = (objectGif)=>{
 
     let allGif= objectGif
-    // let userName = dataGif.data[i].username
-    // let title = dataGif.data[i].title
-    // let imgPath = dataGif.data[i].images.fixed_width.url;
-    // let objectGif = 
     
-    // {
-    //     Name: userName,
-    //     Title: title,
-    //     url: imgPath
-    // };
 
     let body = document.getElementById("max-id")
     body.insertAdjacentHTML('afterbegin', 
@@ -663,16 +662,7 @@ const maximizar = (objectGif)=>{
     let heartButton = document.getElementsByClassName('favbutton')
     
     for (let i = 0; i < heartButton.length; i++) {
-        // let userName = dataGif.data[i].username
-        // let title = dataGif.data[i].title
-        // let imgPath = dataGif.data[i].images.fixed_width.url;
-        // let objectGif = 
-    
-        // {
-        //     Name: userName,
-        //     Title: title,
-        //     url: imgPath
-        // };
+      
         allGif
         heartButton[i].addEventListener('click',()=> saveFav(objectGif,i))
     
@@ -681,33 +671,12 @@ const maximizar = (objectGif)=>{
    
 }
 function borrar() {
-    // let main = document.getElementById("max-id")
-    // let body = document.querySelectorAll("body")
-    // let zoom = document.getElementsByClassName("max-container")
     
-   
-    
-    // body.parentNode.removeChild(zoom)
-    // body.parentNode.removeChild(zoom);
-    
-    // let zoom = document.getElementById("max-container")
-    
-    // zoom.style.zIndex="-2000"
-    
-    // if (zoom.parentElement==main) {
-        //     main.removeChild(zoom);
-    // }
-    // // document.getElementById("max-id").replaceChild('', zoom);
     
     let main = document.getElementById("max-id")
     let zoom = document.getElementById("max-container")
     
     for (let i = 0; i < closeButton.length; i++) {
-        // body.removeChild ( body.firstChild)
-        
-        // document.body.removeChild ( body.firstElementChild)
-        // main.parentNode.removeChild(zoom)
-        // body.parentNode.removeChild(zoom);
         
         
         if (zoom.parentElement==main) {
@@ -715,21 +684,12 @@ function borrar() {
         }
             
     }
-    }
+}
     let closeButton = document.getElementsByClassName("close")
     // closeButton[0].addEventListener("click", borrar())
 const maximizarFav = (gifInfo, i)=>{
 
-    // let userName = dataGif.data[i].username
-    // let title = dataGif.data[i].title
-    // let imgPath = dataGif.data[i].images.fixed_width.url;
-    // let objectGif = 
-    
-    // {
-    //     Name: userName,
-    //     Title: title,
-    //     url: imgPath
-    // };
+  
 
     const gifTitle = gifInfo.map(gifInfo => gifInfo.Title);
     const gifUrl = gifInfo.map(gifInfo => gifInfo.url);
@@ -761,7 +721,9 @@ const maximizarFav = (gifInfo, i)=>{
     let gif = document.createElement("img");
     gif.id = `max`
 
-    gif.src = gifUrl[i]
+    gif.src = gifUrl
+    
+    console.log(gif.src=gifUrl[i])
     gif.style.width = "360px"
     gif.style.height = "360px"
     gif.style.display = "block"
@@ -771,16 +733,7 @@ const maximizarFav = (gifInfo, i)=>{
     let heartButton = document.getElementsByClassName('favbutton')
     
     for (let i = 0; i < heartButton.length; i++) {
-        // let userName = dataGif.data[i].username
-        // let title = dataGif.data[i].title
-        // let imgPath = dataGif.data[i].images.fixed_width.url;
-        // let objectGif = 
-    
-        // {
-        //     Name: userName,
-        //     Title: title,
-        //     url: imgPath
-        // };
+      
         heartButton[i].addEventListener('click',()=> saveFav(objectGif,i))
     
     }
