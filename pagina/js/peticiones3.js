@@ -558,7 +558,9 @@ var trendData = []
         };
         zoomButton[i].addEventListener('click',()=> maximizar(objectGif,i))
     }
+    
     descargar();
+
     let heartButton = document.getElementsByClassName('favbutton')
     
     for (let i = 0; i < heartButton.length; i++) {

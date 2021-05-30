@@ -28,7 +28,7 @@ let trends = document.getElementById("trending-sect")
 
 home.addEventListener("click", ()=> 
 {
-    let favoritosBtn = document.getElementById("favoritos");
+    let favoritosBtn = document.querySelector("#favoritos a");
     favoritosBtn.setAttribute('style',`
     pointer-events: initial;
     cursor: default;
@@ -57,7 +57,7 @@ home.addEventListener("click", ()=>
 
 favoritosBtn.addEventListener("click", ()=> 
     {
-        let favoritosBtn = document.getElementById("favoritos");
+        let favoritosBtn = document.querySelector("#favoritos a");
         favoritosBtn.setAttribute('style',`
         pointer-events: none;
         cursor: default;
@@ -176,7 +176,7 @@ favoritosBtn.addEventListener("click", ()=>
 
 crearGif.addEventListener("click", ()=> 
 {
-        let favoritosBtn = document.getElementById("favoritos");
+        let favoritosBtn = document.querySelector("#favoritos a");
         favoritosBtn.setAttribute('style',`
         pointer-events: initial;
         cursor: default;
@@ -205,7 +205,7 @@ crearGif.addEventListener("click", ()=>
 
 crearGifBtn.addEventListener("click", ()=> 
 {
-        let favoritosBtn = document.getElementById("favoritos");
+        let favoritosBtn = document.querySelector("#favoritos a");
         favoritosBtn.setAttribute('style',`
         pointer-events: initial;
         cursor: default;
@@ -220,6 +220,7 @@ crearGifBtn.addEventListener("click", ()=>
 
     
     if (favorites.parentElement==favSect) {
+        
             favSect.removeChild(favorites);
     }
     
@@ -234,7 +235,8 @@ crearGifBtn.addEventListener("click", ()=>
 
 misGifos.addEventListener("click", ()=> 
 {
-        let favoritosBtn = document.getElementById("favoritos");
+        let favoritosBtn =  document.querySelector("#favoritos a");
+
         favoritosBtn.setAttribute('style',`
         pointer-events: initial;
         cursor: default;

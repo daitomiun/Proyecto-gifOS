@@ -211,34 +211,41 @@
     <section class="create-gif-sect bg-w-g" id="create-gif-sect">
         <div class="container">
             <div class="box title-align">
-                <div class="create-gif">
+                <div class="create-gif" id="create-gif">
                     <!-- <div class="camera">
                         <img src="" alt="" >
                         <img src="" alt="" >
                     </div> -->
                     <div class="gif-camera">
-                        <div class="text-phase1">
+                        <div class="text-phase1"  id="text-phase1">
                             <h1>Aqui podras <br> crear tus propios 
                                 <span style="color: #50E3C2;">GIFOS</span>
                             </h1>
                             <p class="black-typo">¡Crea tu GIFO en sólo 3 pasos! <br> (sólo necesitas una cámara para grabar un video)</p>
                         </div>
-                        <div class="text-phase2">
+                        <div class="text-phase2" id="text-phase2">
                             <h2>¿Nos das acceso <br>
                                 a tu cámara?</h2>
                             <p class="black-typo">El acceso a tu camara será válido sólo <br>
                                 por el tiempo en el que estés creando el GIFO.</p>
                         </div>
+                        <video src="js/video.js" id="video"></video>
                     </div>
-                    <div class="progress-box">
+                    <div class="progress-box" id="progress-box">
                         <div class="progress-numbers">
-                            <div class="progress-circle">1</div>
-                            <div class="progress-circle">2</div>
-                            <div class="progress-circle">3</div>
+                            <div class="progress-circle" id="p1">1</div>
+                            <div class="progress-circle"  id="p2">2</div>
+                            <div class="progress-circle"  id="p3">3</div>
                         </div>
-                        <div class="progress-bar"></div>
-                        <div class="progress-button">
-                            <p>prueba</p>
+                        <div class="progress-bar" id="progress-bar"></div>
+                        <div class="progress-button" id="progress-button">
+                            <p>comenzar</p>
+                        </div>
+                        <div class="progress-button" id="progress-button2">
+                            <p>grabar</p>
+                        </div>
+                        <div class="progress-button" id="progress-button3">
+                            <p>terminar</p>
                         </div>
                     </div>
                 </div>
@@ -280,7 +287,8 @@
             </div>
         </div>
     </footer>
-  
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="js/video.js" defer></script>
     <script src="js/modes.js"></script> 
     <script src="js/peticiones3.js"></script>
     <script src="js/events.js"></script>
