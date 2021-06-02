@@ -1,5 +1,12 @@
 //redireccion de la pagina
-
+// fetch (`js/events.js`, {
+//     method: 'GET',
+//     headers: {
+        
+//         "Access-Control-Allow-Credentials": true,
+//         "Accept": "application/json"
+// }
+// })
 
 //links
 
@@ -46,6 +53,15 @@ home.addEventListener("click", ()=>
             favSect.removeChild(favorites);
     }
     
+    let myGif = document.getElementById("my-gifs")
+    let myGifSect = document.getElementById("my-gifs-sect")
+    // favSect.parentNode.removeChild(favorites)
+    
+    if (myGif.parentElement==myGifSect) {
+        
+        myGifSect.removeChild(myGif);
+    }
+
     counter = 0;
     secBusqueda.style.display = "block";
     secFavoritos.style.display = "none";
@@ -65,6 +81,14 @@ favoritosBtn.addEventListener("click", ()=>
         
     `)
 
+    let myGif = document.getElementById("my-gifs")
+    let myGifSect = document.getElementById("my-gifs-sect")
+    // favSect.parentNode.removeChild(favorites)
+    
+    if (myGif.parentElement==myGifSect) {
+        
+        myGifSect.removeChild(myGif);
+    }
         secBusqueda.style.display = "none";
         secFavoritos.style.display = "block";
         secCrear.style.display = "none";
@@ -109,7 +133,8 @@ favoritosBtn.addEventListener("click", ()=>
             console.log(gifname[i])
 
             let favElement = document.createElement("div");
-            favElement.className = "gif-card fav-state";
+            favElement.className = `gif-card fav-state `;
+            favElement.id = `card-${i}`
             favElement.innerHTML = `
                         <div id="gif-id-${i}" ></div>
                             <div class="gif-box">
@@ -164,12 +189,13 @@ favoritosBtn.addEventListener("click", ()=>
                     //     Title: title,
                     //     url: imgPath
                     // };
+                    
                 const gifInfo = JSON.parse(localStorage.getItem(`${llave}`))
                 // console.log(gifInfo)
                 
                 zoomButton[i].addEventListener('click',()=> maximizarFav(gifInfo,i))
         }
-
+        borrarGif();
         descargar();
     }
 );
@@ -193,7 +219,14 @@ crearGif.addEventListener("click", ()=>
     if (favorites.parentElement==favSect) {
             favSect.removeChild(favorites);
     }
+    let myGif = document.getElementById("my-gifs")
+    let myGifSect = document.getElementById("my-gifs-sect")
+    // favSect.parentNode.removeChild(favorites)
     
+    if (myGif.parentElement==myGifSect) {
+        
+        myGifSect.removeChild(myGif);
+    }
 
     secBusqueda.style.display = "none";
     secFavoritos.style.display = "none";
@@ -215,15 +248,19 @@ crearGifBtn.addEventListener("click", ()=>
     let favSect = document.getElementById("favs")
     let favorites = document.getElementById("favorites")
 
-   
+    let myGif = document.getElementById("my-gifs")
+    let myGifSect = document.getElementById("my-gifs-sect")
     // favSect.parentNode.removeChild(favorites)
-
+    
+    if (myGif.parentElement==myGifSect) {
+        
+        myGifSect.removeChild(myGif);
+    }
     
     if (favorites.parentElement==favSect) {
         
-            favSect.removeChild(favorites);
+        favSect.removeChild(favorites);
     }
-    
     
     secBusqueda.style.display = "none";
     secFavoritos.style.display = "none";
@@ -233,7 +270,7 @@ crearGifBtn.addEventListener("click", ()=>
 }
 );
 
-misGifos.addEventListener("click", ()=> 
+misGifos.addEventListener("click", async ()=> 
 {
         let favoritosBtn =  document.querySelector("#favoritos a");
 
@@ -249,108 +286,100 @@ misGifos.addEventListener("click", ()=>
    
     // favSect.parentNode.removeChild(favorites)
 
+    let myGifSect = document.getElementById("mine")
+    let empty = document.getElementById("empty-my")
     
     if (favorites.parentElement==favSect) {
             favSect.removeChild(favorites);
     }
-    
+
+    let crearAppend = document.createElement("div")
+    crearAppend.className = "my-gifs";
+    crearAppend.id = "my-gifs";
+    myGifSect.insertBefore(crearAppend, empty)
     
     secBusqueda.style.display = "none";
     secFavoritos.style.display = "none";
     secCrear.style.display = "none";
     secMigif.style.display = "block";
     trends.style.display = "block";
+
+    
+    const miGifInfo = JSON.parse(localStorage.getItem(`MyGifs`))
+    let myGif = document.getElementsByClassName("my-gifs")
+    
+    for (let i = 0; i < miGifInfo.length; i++) 
+    {
+        
+
+        const url = `https://media.giphy.com/media/${miGifInfo[i]}/giphy.gif`;
+        console.log(url)
+
+
+
+
+        let MyElement = document.createElement("div");
+            MyElement.className = `gif-card my-state `;
+            MyElement.id = `card-${i}-my`
+            MyElement.innerHTML = `
+                        <div id="gif-id-${i}" ></div>
+                            <div class="gif-box">
+                                <div class="gif-icons">
+                                    <div class="icon-box zoomButton">
+                                        <i class='fas fa-search-plus'></i>
+                                    </div>
+                                    <div class= "gifid" style="display:none;">${url}</div>
+                                    <div class="icon-box downloadButton">
+                                        <i class="fas fa-download"></i>
+                                    </div>
+                                    <div class= "gifid" style="display:none;">${url}</div>
+                                    <div class="icon-box garbage">
+                                        <i class="fa fa-trash"></i>
+                                    </div>
+                                </div>
+                                <div class="adaptive-text">
+                                    <P class="gif-name gif-title"></P>
+                                </div>
+                            </div>
+            
+            `
+            myGif[0].appendChild(MyElement)[0];
+            empty.style.display= "none"
+            let favContainer = document.getElementById(`gif-id-${i}`);
+            favContainer.style.width = "260px";
+            favContainer.style.height = "200px";
+            favContainer.style.position = "absolute";
+            favContainer.style.display = "block";
+
+            let favGif = document.createElement("img")
+            favGif.style.width = "260px";
+            favGif.style.height = "200px";
+            favGif.style.display = "block";
+            favGif.setAttribute("src", url);
+            favContainer.appendChild(favGif);
+        
+    }
+    let zoomButton = document.getElementsByClassName('zoomButton')
+    for (let i = 0; i < zoomButton.length; i++) {
+            // let userName = dataGif.data[i].username
+            // let title = dataGif.data[i].title
+            // let imgPath = dataGif.data[i].images.fixed_width.url;
+            // let objectGif = 
+            
+            // {
+                //     // Name: userName,
+                //     Title: title,
+                //     url: imgPath
+                // };
+                
+            const gifInfo = JSON.parse(localStorage.getItem(`MyGifs`))
+            // console.log(gifInfo)
+            
+            zoomButton[i].addEventListener('click',()=> maximizarMio(gifInfo,i))
+    }
+    borrarGifMio();
+    descargar();
 }
 );
 
 
-// eventos mouseOver
-
-//gifcard
-
-    //zoom , download, heart
-
-    
-    
-    
-    
-    
-    
-    // window.onload = function(){
-        //     let zoom = document.getElementById("zoom");
-        //     let download = document.getElementById("download");
-        //     let heart = document.getElementById("heart");
-        
-        //     heart.addEventListener("click", favoritos)
-        //     heart.addEventListener("click", ()=>
-        //     {
-            //         console.log("funciona")
-            //     })
-            // }
-            
-            // let zoom = document.getElementById("zoom");
-            // let download = document.getElementById("download");
-            // let heart = document.querySelector(".gif-icons #heart");
-            
-    //     document.addEventListener('DOMContentLoaded', function () {
-    //         console.log(heart)
-    //         let imgCatch = document.getElementsByTagName("img");
-        
-    //         console.log(imgCatch.namedItem)
-            
-    //         heart.addEventListener("click", favoritos)
-    // });
-    
-    
-    // function favoritos(element){
-    //     //let heart = document.querySelector(".gif-icons #heart");
-    //     console.log(element)
-    //     console.log("funciona?")
-        
-
-    // }
-    // function maximizar(){
-    //     console.log("maximiza?")
-    //     let max = document.querySelector(".gif-icons #zoom");
-    //     console.log(max)
-        
-    // }
-    //  async function descargar(){
-    //     // console.log("descarga?")
-    //     let imgCatch = document.querySelector("#download img");
-        
-    //     console.log(imgCatch)
-        
-    // }
-    // const downloadGif = async (url, title) => {
-    //     let blob = await fetch(url).then((img) => img.blob());
-    //     invokeSaveAsDialog(blob, title + '.gif');
-    // };
-
-
-
-
-
-
-    //gif para para propagacion
-
-  
-    
-
-    // Array.from(NodeList, stopGif =>
-                    
-    //     stopGif.addEventListener("mouseover", ()=>{
-
-    //         let limit = 48
-
-    //         for(let i = 0; i<=limit; i++){
-
-    //             let stopGif = document.querySelector(`.gif-${i} img`).getAttribute('src');
-    //             stopGif.stopPropagation("img");
-    //         }
-
-
-
-    // })
-
-    // );

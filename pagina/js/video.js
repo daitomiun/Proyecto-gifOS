@@ -63,9 +63,20 @@ videoButton.addEventListener('click', ()=>
 })
 
 //segunda fase 
+var arrMyGifos = new Array
+if ( JSON.parse(localStorage.getItem('MyGifs')) ){
+    arrMyGifos = JSON.parse(localStorage.getItem('MyGifs')) 
+    console.log('habia algo en el local de mis gifos')
+    console.log(arrMyGifos)
+} else {
+    console.log('no habia nada en el local de mis gifos')
+    arrMyGifos = []
+    
+}
 
-videoButton2.addEventListener("click", ()=>
+videoButton2.addEventListener("click",  ()=>
 {
+  
    
     videoButton2.style.display = "none"
     videoButton3.style.display = "block"
@@ -81,7 +92,7 @@ videoButton2.addEventListener("click", ()=>
             width: { max: 390 }
         }
     })
-    .then(function(stream) {
+    .then(async function(stream) {
         
         video.srcObject = stream;
         video.play()
@@ -91,49 +102,59 @@ videoButton2.addEventListener("click", ()=>
             quality: 10,
             width: 360,
             hidden: 240,
-            onGifRecordingStarted: function() {
+            onGifRecordingStarted:  function() {
              console.log('started')
-           },
+            },
         });
         recorder.startRecording();
+        const sleep = m => new Promise(r => setTimeout(r, m));
+        await sleep(3000);
+    
+        await recorder.stopRecording()
+        var blobfile = await recorder.getBlob()
+        console.log(blobfile)
+        let form = new FormData();
+        form.append('file', recorder.getBlob(), 'myGif.gif');
+        console.log(form.get('file'))
+        console.log('finished')
+
+
+
+      
+
+        let apiKey = "VZ4N6ebz6BSdgrhUNiKAAU0dNYws5GSn";
+        await fetch(`https://upload.giphy.com/v1/gifs?api_key=${apiKey}`, {
+            method: 'POST',
+            body: form,
+        })
+        .then((response) => response.json())
+        .then(async (myGif) => {
+    
+            let myGifoId = myGif.data.id
+
+            
+            //  let myGifoId = myGif.data
+            console.log(myGif.data); 
+            arrMyGifos.push(myGifoId);
+			console.log(arrMyGifos)
+
+			localStorage.setItem('MyGifs', JSON.stringify(arrMyGifos))
+            // let fetchGifId = await fetch(`https://api.giphy.com/v1/gifs/${myGif.data.id}?api_key=${apiKey}`)
+            // let fetchReq = await fetchGifId.json()
+            // console.log(fetchReq);
+
+        })
     })
 })
 
- videoButton3.addEventListener("click", ()=>
+ videoButton3.addEventListener("click", async ()=>
 {
    
     p3.setAttribute('style',`
         background-color: #562ee5;
         color: #fff;
     `)
-    navigator.mediaDevices.getUserMedia({
-        audio: false,
-        video: {
-            height: { max: 480 },
-            width: { max: 390 }
-        }
-    })
-    .then(async function(stream) {
-        
-        // video.srcObject = stream;
-        video.play()
-        recorder = RecordRTC(stream, {
-            type: 'gif',
-            frameRate: 1,
-            quality: 10,
-            width: 360,
-            hidden: 240,
-            onGifRecordingStarted: function() {
-             console.log('finished')
-            },
-        });
-        recorder.startRecording();
-        let form = new FormData();
-        form.append('file', recorder.getBlob(), 'myGif.gif');
-        console.log(form.get('file'))
-        await recorder.stopRecording();
-    })
-
+   alert("tus gifos estan en la seccion de tus gifos")
 
 })
 
