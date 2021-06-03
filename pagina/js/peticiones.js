@@ -57,7 +57,7 @@ async function descargar() {
                 createGif.href = window.URL.createObjectURL(file);
                 createGif.dataset.downloadurl = ['application/octet-stream', createGif.download, createGif.href].join(':');
                 createGif.click();
-                return
+                return 0
             })
             
         }
@@ -138,7 +138,7 @@ async function borrarGifMio() {
             
              localStorage.setItem('MyGifs', JSON.stringify(quitarArrMio))
 
-             if(quitarArr == ""){
+             if(quitarArrMio == ""){
                  
                     let epmty = document.getElementById("empty")
                     epmty.style.display= "block"
@@ -174,6 +174,11 @@ function deleteGifs() {
 
     getMore.style.display = "block";
 
+    try {
+        throw quitAllWrittenText
+    } catch (error) {
+        console.log(error)
+    }
 
 }
 
@@ -199,9 +204,17 @@ button.addEventListener("keyup", function (event) {
 
 
 
+var pruebaLimit = 12
 
 async function gifCall() {
+    
+    let limit = pruebaLimit;
 
+    // if (limit>= 36) {
+    //     let getMore = document.getElementById("more-button");
+    //     getMore.style.display = "none";
+        
+    // }
     ++counter;
     let requested = document.getElementById("show-requested")
     console.log(`gif call ${counter}`);
@@ -210,16 +223,15 @@ async function gifCall() {
     let tRecomend = document.getElementById("trend-recomend")
     //console.log(tRecomend)
 
-    let maxLimit = 48
-    let limit = 12;
-    const fetchGif = await fetch(`https://api.giphy.com/v1/gifs/search?q=${uInput}&api_key=${apiKey}&limit=${maxLimit}`)
+    // let maxLimit = 48
+    const fetchGif = await fetch(`https://api.giphy.com/v1/gifs/search?q=${uInput}&api_key=${apiKey}&limit=${limit}`)
     let dataGif = await fetchGif.json();
     console.log("inst working:  " + dataGif)
     // let tRecomend = document.getElementsByClassName("trend-recomend")
     let recomend = document.getElementsByClassName("written-recomend");
     // tRecomend.appendChild(createReflected)
 
-    for (let i = 0; i < maxLimit; i++) {
+    for (let i = 0; i < limit; i++) {
 
         let element = document.createElement("div");
         let userName = dataGif.data[i].username
@@ -304,9 +316,7 @@ async function gifCall() {
         // }, 3000);
     }
 
-
-    let getMore = document.getElementById("more-button");
-    getMore.style.display = "flex";
+    
 
 
 
@@ -371,8 +381,49 @@ async function gifCall() {
     
     execute();
     descargar();
+
+    if (limit >= 12) {
+        
+        let getMore = document.getElementById("more-button");
+        getMore.style.display = "flex";
+        
+        getMore.addEventListener("click", ()=>{
+            
+            pruebaLimit += 12 
+            console.log(pruebaLimit)
+            capture()
+            // deleteGifs();
+            gifCall()
+            // if (pruebaLimit>= 36) {
+            //     let getMore = document.getElementById("more-button");
+            //     getMore.style.display = "none";
+                
+            // }
+            // if (pruebaLimit =48) {
+            //     getMore.style.display = "none";
+                
+            // }
+
+        })
+        
+    }
+    if (limit>= 36) {
+        let getMore = document.getElementById("more-button");
+        getMore.style.display = "none";
+        
+    }
     
 }
+// function moreButton() {
+//     getMore.addEventListener("click", ()=>{
+
+//         limit += 12 
+//         console.log(limit)
+//         capture()
+//         // deleteGifs();
+//         gifCall(limit)
+//     })
+// }
 
 
 async function recomendations() {
@@ -382,7 +433,7 @@ async function recomendations() {
     //llamar a los estilos
     let change = document.getElementById("search-bar");
     let suggest = document.querySelector(".suggest");
-    let show = document.querySelector(".suggest .suggest-text .show");
+    // let show = document.querySelector(".suggest .suggest-text .show");
 
     if (uInput == null || uInput.length == 0) {
         change.style.height = "50px";
@@ -406,15 +457,17 @@ async function recomendations() {
             show.innerHTML = `${laData.data[i].name}`
             //console.log( laData.data[i].name);
 
+            
+                
 
         }
 
 
     }
 
-
 }
 recomendations();
+
 
 
 
