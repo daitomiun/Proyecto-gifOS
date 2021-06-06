@@ -20,6 +20,7 @@ async function callApi() {
 
 //gifs
 
+
 let counter = 0;
 
 let insert = [];
@@ -28,8 +29,8 @@ function capture() {
     let uInput = document.getElementById("search").value;
 
     insert.push(uInput)
-    console.log(insert);
-    console.log(`User input ${counter}`);
+    // console.log(insert);
+    // console.log(`User input ${counter}`);
     
     deleteGifs();
  
@@ -226,7 +227,7 @@ async function gifCall() {
     // let maxLimit = 48
     const fetchGif = await fetch(`https://api.giphy.com/v1/gifs/search?q=${uInput}&api_key=${apiKey}&limit=${limit}`)
     let dataGif = await fetchGif.json();
-    console.log("inst working:  " + dataGif)
+    // console.log("inst working:  " + dataGif)
     // let tRecomend = document.getElementsByClassName("trend-recomend")
     let recomend = document.getElementsByClassName("written-recomend");
     // tRecomend.appendChild(createReflected)
@@ -850,8 +851,9 @@ elementosPsuggest.forEach(p => {
         //document.getElementsByTagName("p")[5].alt = this.alt;
         document.getElementById("search").value = this.innerHTML;
 
-        //console.log(this.innerHTML)
-
+        
+        gifCall();
+        capture();
     }
 
 })
@@ -869,7 +871,9 @@ elementosP.forEach(p => {
         document.getElementById("search").value = this.innerHTML;
 
         //console.log(this.innerHTML)
-
+        gifCall();
+        capture();
+        
     }
 
 })
